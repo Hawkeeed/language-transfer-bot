@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="Content-Security-Policy"
+        content="default-src 'self'; media-src 'self' blob: data:; img-src 'self' data:; style-src 'self';" />
+  <title>Language Transfer Bot</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <!-- HOME -->
+    <section id="screen-home" class="screen active">
+      <header class="hero">
+        <h1>Language Transfer Bot</h1>
+        <p class="subtitle">Learn German by thinking, not memorising.</p>
+      </header>
+      <div class="card-grid">
+        <button class="big-card" data-go="lesson">
+          <span class="card-emoji">🎓</span>
+          <span class="card-title">Guided Lesson</span>
+          <span class="card-desc">The core method. Build German step by step, out loud.</span>
+          <span class="card-meta" id="lesson-progress-label">Lesson 1</span>
+        </button>
+        <button class="big-card" data-go="freetalk">
+          <span class="card-emoji">💬</span>
+          <span class="card-title">Free Talk</span>
+          <span class="card-desc">Pick a topic and just talk. Gentle correction, summary at the end.</span>
+        </button>
+        <button class="big-card" data-go="review">
+          <span class="card-emoji">🔁</span>
+          <span class="card-title">Review</span>
+          <span class="card-desc">Spaced repetition of sentences you've built.</span>
+          <span class="card-meta" id="review-due-label">—</span>
+        </button>
+      </div>
+      <button id="open-settings" class="ghost-btn">⚙ Settings</button>
+      <p id="home-warning" class="warning hidden">⚠ No API key set. Open Settings to add your OpenAI key.</p>
+    </section>
+
+    <!-- SETTINGS -->
+    <section id="screen-settings" class="screen">
+      <div class="topbar"><button class="back-btn" data-go="home">← Back</button><h2>Settings</h2></div>
+      <div class="form">
+        <label>OpenAI API Key</label>
+        <div class="row">
+          <input type="password" id="api-key" placeholder="sk-..." autocomplete="off" />
+          <button id="save-key" class="primary-btn">Save</button>
+        </div>
+        <p class="hint">Stored encrypted on this computer only (Windows credential store). Never uploaded, never in the repo.</p>
+        <p id="key-status" class="status"></p>
+
+        <button id="test-conn" class="secondary-btn">Test connection</button>
+        <p id="test-result" class="status"></p>
+
+        <hr />
+
+        <label>Default level (Free Talk)</label>
+        <select id="setting-level">
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+        </select>
+
+        <label>Voice</label>
+        <select id="setting-voice">
+          <option value="alloy">alloy</option>
+          <option value="ash">ash</option>
+          <option value="ballad">ballad</option>
+          <option value="coral">coral</option>
+          <option value="echo">echo</option>
+          <option value="sage">sage</option>
+          <option value="shimmer">shimmer</option>
+          <option value="verse">verse</option>
+        </select>
+
+        <label>Speech speed</label>
+        <select id="setting-speed">
+          <option value="clear">Clear &amp; slower (recommended)</option>
+          <option value="normal">Natural speed</option>
+        </select>
+
+        <label>Default input mode</label>
+        <select id="setting-input">
+          <option value="voice">Voice</option>
+          <option value="text">Text</option>
+        </select>
+
+        <p id="settings-saved" class="status"></p>
+      </div>
+    </section>
+
+    <!-- GUIDED LESSON -->
+    <section id="screen-lesson" class="screen">
+      <div class="topbar">
+        <button class="back-btn" data-go="home">← Back</button>
+        <h2 id="lesson-title">Guided Lesson</h2>
+        <select id="lesson-picker" class="inline-select"></select>
+      </div>
+      <div class="conversation" id="lesson-log"></div>
+      <div class="controls">
+        <button id="lesson-show-text" class="ghost-btn">👁 Show text</button>
+        <button id="lesson-replay" class="ghost-btn">🔊 Replay</button>
+        <div class="spacer"></div>
+        <input type="text" id="lesson-text-input" class="text-input hidden" placeholder="Type your German answer..." />
+        <button id="lesson-mic" class="mic-btn">🎤 Hold to speak</button>
+        <button id="lesson-toggle-input" class="ghost-btn">⌨ Type instead</button>
+      </div>
+      <p id="lesson-status" class="status"></p>
+    </section>
+
+    <!-- FREE TALK -->
+    <section id="screen-freetalk" class="screen">
+      <div class="topbar"><button class="back-btn" data-go="home">← Back</button><h2>Free Talk</h2></div>
+
+      <div id="freetalk-setup" class="form">
+        <label>Level</label>
+        <select id="ft-level">
+          <option value="A1">A1</option>
+          <option value="A2">A2</option>
+          <option value="B1">B1</option>
+          <option value="B2">B2</option>
+        </select>
+        <label>Topic</label>
+        <select id="ft-topic">
+          <option value="Ordering food in a restaurant">Ordering food in a restaurant</option>
+          <option value="Talking about your weekend">Talking about your weekend</option>
+          <option value="A job interview">A job interview</option>
+          <option value="Making small talk with a neighbour">Small talk with a neighbour</option>
+          <option value="Planning a trip">Planning a trip</option>
+          <option value="__custom__">Custom topic…</option>
+        </select>
+        <input type="text" id="ft-custom" class="text-input hidden" placeholder="Type your own topic..." />
+        <button id="ft-start" class="primary-btn">Start conversation</button>
+      </div>
+
+      <div id="freetalk-session" class="hidden">
+        <div class="conversation" id="ft-log"></div>
+        <div class="controls">
+          <button id="ft-show-text" class="ghost-btn">👁 Show text</button>
+          <button id="ft-replay" class="ghost-btn">🔊 Replay</button>
+          <div class="spacer"></div>
+          <input type="text" id="ft-text-input" class="text-input hidden" placeholder="Type in German..." />
+          <button id="ft-mic" class="mic-btn">🎤 Hold to speak</button>
+          <button id="ft-toggle-input" class="ghost-btn">⌨ Type instead</button>
+          <button id="ft-end" class="secondary-btn">End &amp; get feedback</button>
+        </div>
+        <p id="ft-status" class="status"></p>
+      </div>
+    </section>
+
+    <!-- REVIEW (SRS) -->
+    <section id="screen-review" class="screen">
+      <div class="topbar"><button class="back-btn" data-go="home">← Back</button><h2>Review</h2></div>
+      <div id="review-empty" class="form hidden">
+        <p>No cards are due right now. 🎉</p>
+        <p class="hint">Cards are created automatically from your lessons and free-talk sessions.</p>
+      </div>
+      <div id="review-card" class="hidden">
+        <div class="conversation" id="review-log"></div>
+        <div class="controls">
+          <button id="review-show-text" class="ghost-btn">👁 Show text</button>
+          <button id="review-replay" class="ghost-btn">🔊 Replay</button>
+          <div class="spacer"></div>
+          <input type="text" id="review-text-input" class="text-input hidden" placeholder="Say it in German..." />
+          <button id="review-mic" class="mic-btn">🎤 Hold to speak</button>
+          <button id="review-toggle-input" class="ghost-btn">⌨ Type instead</button>
+        </div>
+        <p id="review-status" class="status"></p>
+      </div>
+    </section>
+  </div>
+
+  <script src="prompts.js"></script>
+  <script src="srs.js"></script>
+  <script src="audio.js"></script>
+  <script src="screens/settings.js"></script>
+  <script src="screens/lesson.js"></script>
+  <script src="screens/freetalk.js"></script>
+  <script src="screens/review.js"></script>
+  <script src="renderer.js"></script>
+</body>
+</html>

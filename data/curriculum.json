@@ -1,0 +1,224 @@
+{
+  "language": "German",
+  "from": "English",
+  "method": "Language-Transfer-inspired (original content)",
+  "lessons": [
+    {
+      "id": 1,
+      "title": "The -ieren engine & 'ich kann'",
+      "concepts": [
+        "Hundreds of English verbs ending in -ate/-ise/-ize/-fy become German verbs ending in -ieren (pronounced 'EE-ren').",
+        "With 'ich kann' (I can) + an infinitive, you can already make full sentences.",
+        "The second verb (the infinitive) goes to the END of the sentence."
+      ],
+      "steps": [
+        {
+          "id": "1.1",
+          "teach": "English '-ise/-ize/-ate' verbs often map to German '-ieren'. 'to organise' -> 'organisieren'. The stress lands on the 'ie': organis-IE-ren.",
+          "prompts": [
+            { "en": "to organise", "de": "organisieren", "notes": "Pure cognate transfer. -ise -> -ieren." },
+            { "en": "to reserve", "de": "reservieren", "notes": "reserve -> reservieren." },
+            { "en": "to repair", "de": "reparieren", "notes": "repair -> reparieren." }
+          ]
+        },
+        {
+          "id": "1.2",
+          "teach": "'ich kann' = 'I can'. Add an infinitive and you have a sentence. 'I can organise' = 'Ich kann organisieren'. The verb stays at the end.",
+          "prompts": [
+            { "en": "I can organise", "de": "Ich kann organisieren", "notes": "kann is the conjugated verb; infinitive at the end." },
+            { "en": "I can reserve", "de": "Ich kann reservieren", "notes": "Same structure." },
+            { "en": "I can repair it", "de": "Ich kann es reparieren", "notes": "Introduce 'es' (it). Note infinitive still last." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "title": "Want & must — verb to the end",
+      "concepts": [
+        "'ich will' = I want, 'ich muss' = I must / I have to.",
+        "Like 'kann', these send the main verb to the very end.",
+        "'es' = it, 'das' = that."
+      ],
+      "steps": [
+        {
+          "id": "2.1",
+          "teach": "'ich will' = 'I want' (NOT 'I will' — false friend!). The infinitive goes to the end.",
+          "prompts": [
+            { "en": "I want to organise it", "de": "Ich will es organisieren", "notes": "will = want. Warn about the false friend." },
+            { "en": "I want to reserve that", "de": "Ich will das reservieren", "notes": "das = that." }
+          ]
+        },
+        {
+          "id": "2.2",
+          "teach": "'ich muss' = 'I must / I have to'. Same end-position rule.",
+          "prompts": [
+            { "en": "I have to repair it", "de": "Ich muss es reparieren", "notes": "muss = must/have to." },
+            { "en": "I have to organise that", "de": "Ich muss das organisieren", "notes": "Consolidates muss + das." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "title": "Saying no — 'nicht' and 'machen'",
+      "concepts": [
+        "'machen' = to make / to do (very common).",
+        "'nicht' = not; it sits just before the final infinitive.",
+        "Negating full sentences you already know."
+      ],
+      "steps": [
+        {
+          "id": "3.1",
+          "teach": "'machen' = to do / to make. 'Ich kann das machen' = 'I can do that'.",
+          "prompts": [
+            { "en": "I can do that", "de": "Ich kann das machen", "notes": "machen at the end." },
+            { "en": "I want to do it", "de": "Ich will es machen", "notes": "will + es + machen." }
+          ]
+        },
+        {
+          "id": "3.2",
+          "teach": "'nicht' = not, and it goes right before the final verb. 'I can't do it' = 'Ich kann es nicht machen'.",
+          "prompts": [
+            { "en": "I can't do it", "de": "Ich kann es nicht machen", "notes": "nicht before the infinitive." },
+            { "en": "I don't want to do that", "de": "Ich will das nicht machen", "notes": "will ... nicht machen." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "title": "Asking questions & 'du'",
+      "concepts": [
+        "Turn a statement into a question by putting the verb FIRST: 'Kann ich...?'",
+        "'du' = you (informal). Its verb ending is -st: 'du kannst', 'du willst', 'du musst'.",
+        "Combining questions with what you already know."
+      ],
+      "steps": [
+        {
+          "id": "4.1",
+          "teach": "Question = verb first. 'Ich kann...' -> 'Kann ich...?'.",
+          "prompts": [
+            { "en": "Can I do it?", "de": "Kann ich es machen?", "notes": "Inversion: verb first." },
+            { "en": "Can I reserve that?", "de": "Kann ich das reservieren?", "notes": "Same pattern." }
+          ]
+        },
+        {
+          "id": "4.2",
+          "teach": "'du' = you (informal). The verb takes -st. 'du kannst', 'du willst', 'du musst'.",
+          "prompts": [
+            { "en": "Can you repair it?", "de": "Kannst du es reparieren?", "notes": "kannst + du, inversion." },
+            { "en": "Do you want to do that?", "de": "Willst du das machen?", "notes": "willst + du." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "title": "'haben' — to have, and nouns",
+      "concepts": [
+        "'haben' = to have. ich habe, du hast.",
+        "All German nouns are capitalised: 'Zeit' (time), 'Geld' (money).",
+        "Building real, useful everyday sentences."
+      ],
+      "steps": [
+        {
+          "id": "5.1",
+          "teach": "'ich habe' = I have, 'du hast' = you have. German nouns are always capitalised.",
+          "prompts": [
+            { "en": "I have time", "de": "Ich habe Zeit", "notes": "Zeit = time, capitalised." },
+            { "en": "I don't have time", "de": "Ich habe keine Zeit", "notes": "Introduce 'keine' = no/not any (used with nouns instead of nicht)." }
+          ]
+        },
+        {
+          "id": "5.2",
+          "teach": "Question form again: 'Hast du...?' = 'Do you have...?'.",
+          "prompts": [
+            { "en": "Do you have time?", "de": "Hast du Zeit?", "notes": "hast + du inversion." },
+            { "en": "Do you have money?", "de": "Hast du Geld?", "notes": "Geld = money." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "title": "Being polite — 'ich möchte'",
+      "concepts": [
+        "'ich möchte' = I would like (polite form of want).",
+        "Light intro to 'ein/eine/einen' = a/an.",
+        "Ordering and requesting things."
+      ],
+      "steps": [
+        {
+          "id": "6.1",
+          "teach": "'ich möchte' = 'I would like' — the polite way to ask for things. Verb still to the end.",
+          "prompts": [
+            { "en": "I would like to reserve a table", "de": "Ich möchte einen Tisch reservieren", "notes": "Tisch = table; einen = a (masculine, object). Keep it light." },
+            { "en": "I would like to do that", "de": "Ich möchte das machen", "notes": "möchte + das + machen." }
+          ]
+        },
+        {
+          "id": "6.2",
+          "teach": "Asking politely: 'Möchtest du...?' = 'Would you like...?'.",
+          "prompts": [
+            { "en": "Would you like to organise it?", "de": "Möchtest du es organisieren?", "notes": "möchtest + du." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "title": "'sein' — to be",
+      "concepts": [
+        "'sein' = to be. ich bin, du bist, es ist.",
+        "Adjectives as cognates: bereit (ready), möglich (possible).",
+        "Describing states."
+      ],
+      "steps": [
+        {
+          "id": "7.1",
+          "teach": "'ich bin' = I am, 'du bist' = you are, 'es ist' = it is. 'is' -> 'ist' is an easy bridge.",
+          "prompts": [
+            { "en": "I am ready", "de": "Ich bin bereit", "notes": "bereit = ready." },
+            { "en": "It is possible", "de": "Es ist möglich", "notes": "möglich = possible." }
+          ]
+        },
+        {
+          "id": "7.2",
+          "teach": "Negate with 'nicht': 'It is not possible' = 'Es ist nicht möglich'.",
+          "prompts": [
+            { "en": "It is not possible", "de": "Es ist nicht möglich", "notes": "nicht after ist." },
+            { "en": "Are you ready?", "de": "Bist du bereit?", "notes": "bist + du inversion." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "title": "He/she/it & 'weil' — longer sentences",
+      "concepts": [
+        "er = he, sie = she, es = it. Their verb takes -t: er kann, sie hat, es ist.",
+        "'weil' = because, and it sends the verb to the very end of its clause.",
+        "Joining ideas into one longer sentence — a satisfying payoff."
+      ],
+      "steps": [
+        {
+          "id": "8.1",
+          "teach": "'er/sie/es' + verb ending -t. 'Sie kann es machen' = 'She can do it'. 'Er hat Zeit' = 'He has time'.",
+          "prompts": [
+            { "en": "She can do it", "de": "Sie kann es machen", "notes": "sie + kann." },
+            { "en": "He has time", "de": "Er hat Zeit", "notes": "er + hat." }
+          ]
+        },
+        {
+          "id": "8.2",
+          "teach": "'weil' = because. After 'weil', the conjugated verb jumps to the END. 'I can't come because I have to work' = 'Ich kann nicht kommen, weil ich arbeiten muss'.",
+          "prompts": [
+            { "en": "I can't come because I have to work", "de": "Ich kann nicht kommen, weil ich arbeiten muss", "notes": "Big LT payoff: weil pushes 'muss' to the end. kommen = come, arbeiten = work." },
+            { "en": "I have time because it is possible", "de": "Ich habe Zeit, weil es möglich ist", "notes": "weil -> ist at the end." }
+          ]
+        }
+      ]
+    }
+  ]
+}

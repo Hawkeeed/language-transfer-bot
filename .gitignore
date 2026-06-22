@@ -1,0 +1,24 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+out/
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local / secrets (the API key lives in Electron userData, never here — this is belt & suspenders)
+*.local
+.env
+*.enc
+key.enc
+settings.json
+progress.json
+srs.json
+weaknesses.json
