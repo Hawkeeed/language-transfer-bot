@@ -5,6 +5,7 @@ window.LessonScreen = (function () {
   let activeLesson = 1;      // lesson currently being studied
   let messages = [];         // chat history for the LLM
   let processing = false;
+  let sessionId = 0;         // bumped on every (re)start to invalidate in-flight turns
   let log, statusEl, picker, inputCfg;
 
   function init() {
@@ -25,7 +26,9 @@ window.LessonScreen = (function () {
     UI.wireInput(inputCfg);
 
     picker.addEventListener('change', () => {
-      activeLesson = parseInt(picker.value, 10);
+      const chosen = parseInt(picker.value, 10);
+      if (chosen === activeLesson) return;
+      activeLesson = chosen;
       startLesson();
     });
   }
@@ -57,6 +60,13 @@ window.LessonScreen = (function () {
     const lesson = currentLessonObj();
     UI.el('lesson-title').textContent = `Lesson ${lesson.id}: ${lesson.title}`;
     log.innerHTML = '';
+    UI.setStatus(statusEl, '');
+    AudioIO.stop();            // silence any audio from the previous lesson and
+                               // settle its pending playback promise so the
+                               // stale in-flight turn can bail cleanly
+    processing = false;        // reset any state left over from a previous lesson
+    sessionId++;               // invalidate any in-flight turn from the old lesson
+    if (picker) picker.value = String(activeLesson);
     const weaknesses = (await window.api.loadData('weaknesses')) || [];
     messages = [{ role: 'system', content: window.Prompts.lessonSystem(lesson, weaknesses) }];
     await botTurn();
@@ -71,16 +81,20 @@ window.LessonScreen = (function () {
 
   async function botTurn() {
     if (processing) return;
+    const my = sessionId;
     processing = true;
     UI.setStatus(statusEl, 'Thinking…');
     let obj;
     try {
       obj = await UI.chatJSON(messages, { temperature: 0.4 });
     } catch (e) {
+      if (my !== sessionId) return;          // lesson changed mid-request — abort silently
       UI.setStatus(statusEl, e.message, 'err');
       processing = false;
       return;
     }
+    if (my !== sessionId) return;            // a new lesson started; drop this stale turn
+
     const say = obj.say || '';
     messages.push({ role: 'assistant', content: say });
     UI.addBubble(log, 'bot', say);
@@ -92,6 +106,7 @@ window.LessonScreen = (function () {
 
     UI.setStatus(statusEl, 'Speaking…');
     try { await AudioIO.speak(say, UI.settings, 'teacher'); } catch (e) { /* audio is best-effort */ }
+    if (my !== sessionId) return;            // lesson changed during playback
     UI.setStatus(statusEl, '');
     processing = false;
 

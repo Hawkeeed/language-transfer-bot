@@ -5,6 +5,8 @@ window.FreeTalkScreen = (function () {
   let level = 'A2';
   let topic = '';
   let processing = false;
+  let sessionId = 0;         // bumped on every (re)start/end to invalidate in-flight turns
+  let active = false;        // true while a session is running (between start and end)
   let log, statusEl, inputCfg;
 
   function init() {
@@ -32,6 +34,13 @@ window.FreeTalkScreen = (function () {
   }
 
   function enter() {
+    // Return to the setup screen. Silence any lingering audio and invalidate
+    // any in-flight turn from a previous session.
+    sessionId++;
+    processing = false;
+    active = false;
+    messages = [];
+    try { AudioIO.stop(); } catch (e) { /* best-effort */ }
     UI.el('freetalk-setup').classList.remove('hidden');
     UI.el('freetalk-session').classList.add('hidden');
     UI.el('ft-level').value = UI.settings.level || 'A2';
@@ -39,22 +48,39 @@ window.FreeTalkScreen = (function () {
   }
 
   async function startSession() {
+    // Invalidate anything in flight and start clean.
+    sessionId++;
+    processing = false;
+    active = true;
+    try { AudioIO.stop(); } catch (e) { /* best-effort */ }
+
     level = UI.el('ft-level').value;
     const sel = UI.el('ft-topic').value;
-    topic = sel === '__custom__' ? (UI.el('ft-custom').value.trim() || 'free conversation') : sel;
+    topic = sel === '__custom__' ? (UI.el('ft-custom').value.trim() || 'free conversation') : (sel || 'free conversation');
 
     UI.el('freetalk-setup').classList.add('hidden');
     UI.el('freetalk-session').classList.remove('hidden');
     log.innerHTML = '';
+    log.classList.remove('show-text'); // bot speaks German; reading is opt-in again
     UI.applyInputMode(inputCfg, UI.settings.inputMode);
+    UI.setStatus(statusEl, '');
 
-    const weaknesses = (await window.api.loadData('weaknesses')) || [];
+    const my = sessionId;
+    let weaknesses;
+    try {
+      weaknesses = (await window.api.loadData('weaknesses')) || [];
+    } catch (e) {
+      if (my !== sessionId) return;
+      UI.setStatus(statusEl, e.message, 'err');
+      return;
+    }
+    if (my !== sessionId) return;            // session changed while loading
     messages = [{ role: 'system', content: window.Prompts.freeTalkSystem(level, topic, weaknesses) }];
     await botTurn();
   }
 
   function handleUser(text) {
-    if (processing) return;
+    if (!active || processing) return;
     UI.addBubble(log, 'user', text);
     messages.push({ role: 'user', content: text });
     botTurn();
@@ -62,16 +88,26 @@ window.FreeTalkScreen = (function () {
 
   async function botTurn() {
     if (processing) return;
+    const my = sessionId;
     processing = true;
     UI.setStatus(statusEl, 'Thinking…');
     let obj;
-    try { obj = await UI.chatJSON(messages, { temperature: 0.6 }); }
-    catch (e) { UI.setStatus(statusEl, e.message, 'err'); processing = false; return; }
+    try {
+      obj = await UI.chatJSON(messages, { temperature: 0.6 });
+    } catch (e) {
+      if (my !== sessionId) return;          // session changed mid-request — abort silently
+      UI.setStatus(statusEl, e.message, 'err');
+      processing = false;
+      return;
+    }
+    if (my !== sessionId) return;            // a new/ended session — drop this stale turn
+
     const say = obj.say || '';
     messages.push({ role: 'assistant', content: say });
     UI.addBubble(log, 'bot', say);
     UI.setStatus(statusEl, 'Speaking…');
-    try { await AudioIO.speak(say, UI.settings, 'german'); } catch (e) { /* best-effort */ }
+    try { await AudioIO.speak(say, UI.settings, 'german'); } catch (e) { /* audio is best-effort */ }
+    if (my !== sessionId) return;            // session changed during playback
     UI.setStatus(statusEl, '');
     processing = false;
   }
@@ -79,25 +115,44 @@ window.FreeTalkScreen = (function () {
   async function endSession() {
     if (processing) return;
     const turns = messages.filter(m => m.role !== 'system');
+    // No learner turns yet — nothing to review; just return to setup.
     if (!turns.some(m => m.role === 'user')) { enter(); return; }
+
+    // Mark the session over so any stray turn is invalidated, and silence audio.
+    const my = ++sessionId;
+    active = false;
     processing = true;
+    try { AudioIO.stop(); } catch (e) { /* best-effort */ }
     UI.setStatus(statusEl, 'Preparing your feedback…');
+
     const transcript = turns.map(m => (m.role === 'user' ? 'Learner: ' : 'Partner: ') + m.content).join('\n');
     let fb;
-    try { fb = await UI.chatJSON(window.Prompts.freeTalkSummaryMessages(transcript, level)); }
-    catch (e) { UI.setStatus(statusEl, e.message, 'err'); processing = false; return; }
-
-    renderFeedback(fb);
-    log.classList.add('show-text'); // feedback is meant to be read
-
-    if (Array.isArray(fb.cards) && fb.cards.length) {
-      await window.SRS.addCards(fb.cards.map(c => ({ en: c.en, de: c.de, source: 'freetalk' })));
+    try {
+      fb = await UI.chatJSON(window.Prompts.freeTalkSummaryMessages(transcript, level));
+    } catch (e) {
+      if (my !== sessionId) return;          // user navigated/restarted while feedback loaded
+      UI.setStatus(statusEl, e.message, 'err');
+      processing = false;
+      return;
     }
-    if (Array.isArray(fb.errors)) {
-      for (const er of fb.errors) await addWeakness(er.why || er.correction);
+    if (my !== sessionId) return;            // session changed; drop stale feedback
+
+    try {
+      renderFeedback(fb);
+      log.classList.add('show-text'); // feedback is meant to be read
+
+      if (Array.isArray(fb.cards) && fb.cards.length) {
+        await window.SRS.addCards(fb.cards.map(c => ({ en: c.en, de: c.de, source: 'freetalk' })));
+      }
+      if (Array.isArray(fb.errors)) {
+        for (const er of fb.errors) await addWeakness(er.why || er.correction);
+      }
+      UI.setStatus(statusEl, '✔ Session reviewed. Cards added to your Review deck.', 'ok');
+    } catch (e) {
+      UI.setStatus(statusEl, 'Saved feedback, but something went wrong: ' + e.message, 'err');
+    } finally {
+      processing = false;
     }
-    UI.setStatus(statusEl, '✔ Session reviewed. Cards added to your Review deck.', 'ok');
-    processing = false;
   }
 
   function renderFeedback(fb) {

@@ -6,9 +6,13 @@ window.SettingsScreen = (function () {
     UI.el('save-key').addEventListener('click', async () => {
       const key = UI.el('api-key').value.trim();
       if (!key) { UI.setStatus(UI.el('key-status'), 'Please paste a key first.', 'err'); return; }
-      await window.api.setKey(key);
-      UI.el('api-key').value = '';
-      UI.setStatus(UI.el('key-status'), '✔ Key saved (encrypted on this computer).', 'ok');
+      try {
+        await window.api.setKey(key);
+        UI.el('api-key').value = '';
+        UI.setStatus(UI.el('key-status'), '✔ Key saved (encrypted on this computer).', 'ok');
+      } catch (e) {
+        UI.setStatus(UI.el('key-status'), '✗ Could not save key: ' + (e && e.message ? e.message : 'unknown error'), 'err');
+      }
     });
 
     UI.el('test-conn').addEventListener('click', async () => {

@@ -37,14 +37,18 @@ async function testConnection() {
   }
 }
 
-// arrayBuffer = raw audio bytes (webm/opus) captured by MediaRecorder in the renderer
-async function transcribe(arrayBuffer) {
+// arrayBuffer = raw audio bytes (webm/opus) captured by MediaRecorder in the renderer.
+// language defaults to German so the model TRANSCRIBES German speech as German
+// instead of "helpfully" translating it to English.
+async function transcribe(arrayBuffer, language) {
   try {
     const client = getClient();
     const file = await toFile(Buffer.from(arrayBuffer), 'speech.webm', { type: 'audio/webm' });
     const res = await client.audio.transcriptions.create({
       file,
-      model: MODELS.stt
+      model: MODELS.stt,
+      language: language || 'de',
+      prompt: 'Transcribe the spoken German exactly as said, in German. Do not translate.'
     });
     return { text: (res.text || '').trim() };
   } catch (err) {
@@ -62,7 +66,10 @@ async function chat(opts) {
       temperature: opts.temperature ?? 0.4,
       ...(opts.json ? { response_format: { type: 'json_object' } } : {})
     });
-    return { text: res.choices[0].message.content };
+    const content = res && res.choices && res.choices[0] && res.choices[0].message
+      ? res.choices[0].message.content
+      : '';
+    return { text: content || '' };
   } catch (err) {
     return { error: friendly(err) };
   }

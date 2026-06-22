@@ -38,8 +38,11 @@ window.UI = {
     opts = opts || {};
     const res = await window.api.chat({ messages, json: true, temperature: opts.temperature });
     if (res.error) throw new Error(res.error);
-    try { return JSON.parse(res.text); }
-    catch { return { say: res.text }; }
+    const text = res.text || '';
+    try {
+      const obj = JSON.parse(text);
+      return (obj && typeof obj === 'object') ? obj : { say: String(obj) };
+    } catch { return { say: text }; }
   },
 
   async refreshSettings() {
@@ -132,6 +135,10 @@ const screens = {
 };
 
 async function nav(name) {
+  // Leaving any screen (or switching) silences in-flight TTS so it can't
+  // bleed into the next screen.
+  if (window.AudioIO && typeof AudioIO.stop === 'function') AudioIO.stop();
+
   // Gate the AI screens behind having an API key.
   if (['lesson', 'freetalk', 'review'].includes(name)) {
     const hasKey = await window.api.hasKey();

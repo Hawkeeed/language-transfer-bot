@@ -8,6 +8,13 @@ window.AudioIO = (function () {
   let chunks = [];
   let lastSpokenAudio = null; // ArrayBuffer of the last TTS clip, for replay
 
+  // Currently-playing clip tracking. `playToken` is bumped on every stop() so a
+  // clip that is interrupted can recognise it is stale and settle its promise
+  // instead of hanging awaiting code.
+  let currentAudio = null;
+  let currentUrl = null;
+  let playToken = 0;
+
   async function ensureStream() {
     if (!stream) {
       stream = await navigator.mediaDevices.getUserMedia({ audio: true });
@@ -35,21 +42,69 @@ window.AudioIO = (function () {
     });
   }
 
+  // Immediately stop and discard any currently-playing audio. Any pending
+  // playback promise settles (resolves) because the clip's token no longer
+  // matches the active token, so awaiting code can continue.
+  function stop() {
+    playToken++;            // invalidate the in-flight clip
+    if (currentAudio) {
+      try {
+        currentAudio.pause();
+        currentAudio.src = '';
+        currentAudio.load();
+      } catch (e) { /* ignore */ }
+      currentAudio = null;
+    }
+    if (currentUrl) {
+      URL.revokeObjectURL(currentUrl);
+      currentUrl = null;
+    }
+  }
+
   function playArrayBuffer(arrayBuffer) {
     return new Promise((resolve, reject) => {
+      let url = null;
       try {
+        const myToken = ++playToken; // this clip becomes the active one
         const blob = new Blob([arrayBuffer], { type: 'audio/mpeg' });
-        const url = URL.createObjectURL(blob);
+        url = URL.createObjectURL(blob);
         const audio = new Audio(url);
-        audio.onended = () => { URL.revokeObjectURL(url); resolve(); };
-        audio.onerror = (e) => { URL.revokeObjectURL(url); reject(e); };
-        audio.play();
-      } catch (e) { reject(e); }
+        currentAudio = audio;
+        currentUrl = url;
+
+        const cleanup = () => {
+          if (currentAudio === audio) currentAudio = null;
+          if (currentUrl === url) currentUrl = null;
+          URL.revokeObjectURL(url);
+        };
+
+        audio.onended = () => {
+          if (myToken !== playToken) return; // already stopped/superseded
+          cleanup();
+          resolve();
+        };
+        audio.onerror = (e) => {
+          if (myToken !== playToken) { resolve(); return; } // stopped — settle quietly
+          cleanup();
+          reject(e);
+        };
+        audio.play().catch((e) => {
+          if (myToken !== playToken) { resolve(); return; }
+          cleanup();
+          reject(e);
+        });
+      } catch (e) {
+        if (url) URL.revokeObjectURL(url);
+        reject(e);
+      }
     });
   }
 
-  // Generate speech via the main process and play it. Returns when playback ends.
+  // Generate speech via the main process and play it. Returns when playback
+  // ends (or is interrupted). Always stops any previous audio first so two
+  // utterances can never overlap.
   async function speak(text, settings, mode) {
+    stop(); // silence whatever is playing before we even fetch
     const res = await window.api.tts({
       text,
       voice: settings.voice,
@@ -62,7 +117,10 @@ window.AudioIO = (function () {
   }
 
   async function replayLast() {
-    if (lastSpokenAudio) await playArrayBuffer(lastSpokenAudio);
+    if (lastSpokenAudio) {
+      stop();
+      await playArrayBuffer(lastSpokenAudio);
+    }
   }
 
   // Transcribe an audio buffer to text via the main process.
@@ -72,5 +130,5 @@ window.AudioIO = (function () {
     return res.text;
   }
 
-  return { startRecording, stopRecording, speak, replayLast, transcribe };
+  return { startRecording, stopRecording, speak, stop, replayLast, transcribe };
 })();

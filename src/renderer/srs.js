@@ -21,6 +21,13 @@ window.SRS = (function () {
 
   // quality: 0..5
   function schedule(card, quality) {
+    // Clamp/normalise inputs so a bad grade or a malformed card can't corrupt
+    // the schedule (NaN intervals, negative due dates, etc.).
+    quality = Math.max(0, Math.min(5, Math.round(Number(quality) || 0)));
+    if (typeof card.easiness !== 'number' || !isFinite(card.easiness)) card.easiness = 2.5;
+    if (typeof card.interval !== 'number' || !isFinite(card.interval)) card.interval = 0;
+    if (typeof card.repetitions !== 'number' || !isFinite(card.repetitions)) card.repetitions = 0;
+
     if (quality < 3) {
       card.repetitions = 0;
       card.interval = 1;
@@ -30,7 +37,7 @@ window.SRS = (function () {
       else if (card.repetitions === 2) card.interval = 6;
       else card.interval = Math.round(card.interval * card.easiness);
     }
-    // update easiness factor
+    // update easiness factor (canonical SM-2 formula), floored at 1.3
     card.easiness = card.easiness + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02));
     if (card.easiness < 1.3) card.easiness = 1.3;
     card.dueDate = Date.now() + card.interval * DAY;
@@ -65,8 +72,10 @@ window.SRS = (function () {
   }
 
   function dueCards(cards) {
+    if (!Array.isArray(cards)) return [];
     const now = Date.now();
-    return cards.filter(c => c.dueDate <= now);
+    // A card with no/invalid dueDate is treated as due now (new or migrated card).
+    return cards.filter(c => c && (typeof c.dueDate !== 'number' || !isFinite(c.dueDate) || c.dueDate <= now));
   }
 
   return { newCard, schedule, loadAll, saveAll, addCards, dueCards };
