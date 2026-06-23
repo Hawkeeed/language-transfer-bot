@@ -27,6 +27,7 @@ window.FreeTalkScreen = (function () {
       micBtn: UI.el('ft-mic'),
       textInput: UI.el('ft-text-input'),
       toggleBtn: UI.el('ft-toggle-input'),
+      stopAudioBtn: UI.el('ft-stop-audio'),
       status: statusEl,
       onText: handleUser
     };
@@ -41,6 +42,8 @@ window.FreeTalkScreen = (function () {
     active = false;
     messages = [];
     try { AudioIO.stop(); } catch (e) { /* best-effort */ }
+    UI.setBusy(inputCfg, false);   // clear any disabled state from a prior session
+    UI.setActiveInput(null);       // no voice input on the setup screen
     UI.el('freetalk-setup').classList.remove('hidden');
     UI.el('freetalk-session').classList.add('hidden');
     UI.el('ft-level').value = UI.settings.level || 'A2';
@@ -63,6 +66,8 @@ window.FreeTalkScreen = (function () {
     log.innerHTML = '';
     log.classList.remove('show-text'); // bot speaks German; reading is opt-in again
     UI.applyInputMode(inputCfg, UI.settings.inputMode);
+    UI.setBusy(inputCfg, false);
+    UI.setActiveInput(inputCfg);   // hand Space-to-talk to this screen
     UI.setStatus(statusEl, '');
 
     const my = sessionId;
@@ -90,6 +95,7 @@ window.FreeTalkScreen = (function () {
     if (processing) return;
     const my = sessionId;
     processing = true;
+    UI.setBusy(inputCfg, true);
     UI.setStatus(statusEl, 'Thinking…');
     let obj;
     try {
@@ -98,18 +104,21 @@ window.FreeTalkScreen = (function () {
       if (my !== sessionId) return;          // session changed mid-request — abort silently
       UI.setStatus(statusEl, e.message, 'err');
       processing = false;
+      UI.setBusy(inputCfg, false);
       return;
     }
     if (my !== sessionId) return;            // a new/ended session — drop this stale turn
 
     const say = obj.say || '';
     messages.push({ role: 'assistant', content: say });
-    UI.addBubble(log, 'bot', say);
+    const bubble = UI.addBubble(log, 'bot', say);
+    attachTranslate(bubble, say);   // per-message "show English" toggle (visible in Show-text)
     UI.setStatus(statusEl, 'Speaking…');
     try { await AudioIO.speak(say, UI.settings, 'german'); } catch (e) { /* audio is best-effort */ }
     if (my !== sessionId) return;            // session changed during playback
     UI.setStatus(statusEl, '');
     processing = false;
+    UI.setBusy(inputCfg, false);
   }
 
   async function endSession() {
@@ -122,6 +131,8 @@ window.FreeTalkScreen = (function () {
     const my = ++sessionId;
     active = false;
     processing = true;
+    UI.setBusy(inputCfg, true);
+    UI.setActiveInput(null);   // session ended — release Space-to-talk
     try { AudioIO.stop(); } catch (e) { /* best-effort */ }
     UI.setStatus(statusEl, 'Preparing your feedback…');
 
@@ -133,6 +144,7 @@ window.FreeTalkScreen = (function () {
       if (my !== sessionId) return;          // user navigated/restarted while feedback loaded
       UI.setStatus(statusEl, e.message, 'err');
       processing = false;
+      UI.setBusy(inputCfg, false);
       return;
     }
     if (my !== sessionId) return;            // session changed; drop stale feedback
@@ -152,6 +164,7 @@ window.FreeTalkScreen = (function () {
       UI.setStatus(statusEl, 'Saved feedback, but something went wrong: ' + e.message, 'err');
     } finally {
       processing = false;
+      UI.setBusy(inputCfg, false);
     }
   }
 
@@ -182,6 +195,62 @@ window.FreeTalkScreen = (function () {
     if (!tag) return;
     let w = (await window.api.loadData('weaknesses')) || [];
     if (!w.includes(tag)) { w.push(tag); if (w.length > 30) w = w.slice(-30); await window.api.saveData('weaknesses', w); }
+  }
+
+  // Translate a German string to English on demand (used by the per-message toggle).
+  async function translate(germanText) {
+    const res = await window.api.chat({
+      temperature: 0,
+      messages: [
+        { role: 'system', content: 'Translate the German text the user sends into natural English. Reply with ONLY the English translation — no quotes, no notes.' },
+        { role: 'user', content: germanText }
+      ]
+    });
+    if (res.error) throw new Error(res.error);
+    return (res.text || '').trim();
+  }
+
+  // Add a small "English" toggle inside a bot bubble's text area. It only shows
+  // when "Show text" is on (it lives in .content), keeps the German, and reveals
+  // the English translation underneath on demand (fetched once, then cached).
+  function attachTranslate(bubbleEl, germanText) {
+    const content = bubbleEl && bubbleEl.querySelector('.content');
+    if (!content) return;
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'translate-btn';
+    btn.textContent = '🌐 English';
+
+    const out = document.createElement('div');
+    out.className = 'translation hidden';
+
+    let loaded = false, loading = false;
+    btn.addEventListener('click', async () => {
+      if (loading) return;
+      if (loaded) {
+        const nowHidden = out.classList.toggle('hidden');
+        btn.textContent = nowHidden ? '🌐 English' : '🙈 Hide English';
+        return;
+      }
+      loading = true;
+      btn.textContent = 'Translating…';
+      try {
+        out.textContent = await translate(germanText);
+        out.classList.remove('hidden');
+        btn.textContent = '🙈 Hide English';
+        loaded = true;
+      } catch (e) {
+        out.textContent = 'Translation failed: ' + e.message;
+        out.classList.remove('hidden');
+        btn.textContent = '🌐 English';
+      } finally {
+        loading = false;
+      }
+    });
+
+    content.appendChild(btn);
+    content.appendChild(out);
   }
 
   return { init, enter };

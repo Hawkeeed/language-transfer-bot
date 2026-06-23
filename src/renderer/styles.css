@@ -80,11 +80,41 @@ button { font-family: inherit; font-size: 14px; }
 .mic-btn {
   background: var(--accent-2); color: white; border: none;
   padding: 12px 22px; border-radius: 12px; cursor: pointer; font-size: 15px; font-weight: 600;
-  user-select: none;
+  user-select: none; min-width: 170px; transition: background .12s ease, box-shadow .12s ease;
 }
 .mic-btn:hover { background: var(--accent); }
-.mic-btn.recording { background: var(--bad); animation: pulse 1s infinite; }
-@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .65; } }
+.mic-btn:active { transform: translateY(1px); }
+.mic-btn.recording {
+  background: var(--bad);
+  animation: pulse 1s infinite;
+  box-shadow: 0 0 0 0 rgba(248, 113, 113, .6);
+}
+@keyframes pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(248, 113, 113, .55); }
+  70%  { box-shadow: 0 0 0 10px rgba(248, 113, 113, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(248, 113, 113, 0); }
+}
+
+/* Busy / disabled affordances: while a screen is Thinking…/Speaking… its
+   input controls are disabled so the user can't double-submit. */
+button:disabled,
+input:disabled,
+select:disabled {
+  opacity: .5;
+  cursor: not-allowed;
+}
+.mic-btn:disabled:hover { background: var(--accent-2); }
+
+/* Accessibility: a clear, consistent focus ring for keyboard users. */
+:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+button:focus-visible,
+.big-card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
 
 /* FORMS */
 .form { max-width: 560px; display: flex; flex-direction: column; gap: 10px; }
@@ -103,6 +133,7 @@ hr { border: none; border-top: 1px solid #2a2f3a; margin: 16px 0; }
 .conversation {
   flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 14px;
   padding: 10px 4px; margin-bottom: 14px;
+  scroll-behavior: smooth;
 }
 .bubble { max-width: 80%; padding: 12px 16px; border-radius: 14px; line-height: 1.5; white-space: pre-wrap; }
 .bubble.bot { background: var(--panel); border: 1px solid #2a2f3a; align-self: flex-start; border-bottom-left-radius: 4px; }
@@ -122,6 +153,28 @@ hr { border: none; border-top: 1px solid #2a2f3a; margin: 16px 0; }
 .feedback-block .err-item { margin: 8px 0; padding-left: 10px; border-left: 2px solid var(--warn); }
 .feedback-block .err-item .corr { color: var(--good); font-weight: 600; }
 
+/* Per-message "show English" translation toggle (Free Talk) */
+.bubble .content .translate-btn {
+  display: inline-block;
+  margin-top: 8px;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid #333a48;
+  border-radius: 8px;
+  padding: 3px 10px;
+  font-size: 12px;
+  cursor: pointer;
+}
+.bubble .content .translate-btn:hover { color: var(--text); border-color: var(--accent); }
+.bubble .content .translation {
+  margin-top: 8px;
+  padding-top: 8px;
+  border-top: 1px dashed #333a48;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 14px;
+}
+
 /* CONTROLS */
 .controls { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; padding-top: 6px; border-top: 1px solid #2a2f3a; }
 .controls .spacer { flex: 1; }
@@ -132,5 +185,17 @@ hr { border: none; border-top: 1px solid #2a2f3a; margin: 16px 0; }
 .status.ok { color: var(--good); }
 .status.err { color: var(--bad); }
 .warning { color: var(--warn); text-align: center; }
+
+/* Create-your-own-lesson panel */
+.create-panel {
+  background: var(--panel);
+  border: 1px solid #2a2f3a;
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 14px;
+}
+.create-panel label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+.create-panel .row { gap: 8px; }
+.create-panel .text-input { flex: 1; min-width: 200px; }
 
 .hidden { display: none !important; }

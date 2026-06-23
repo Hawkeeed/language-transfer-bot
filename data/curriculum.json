@@ -6,6 +6,7 @@
     {
       "id": 1,
       "title": "The -ieren engine & 'ich kann'",
+      "intro": "You already know far more German than you think. English borrowed thousands of Latin verbs, and German borrowed the very same ones with a tidy, predictable ending. Today we'll unlock hundreds of verbs in one move, and then say full sentences with them straight away.",
       "concepts": [
         "Hundreds of English verbs ending in -ate/-ise/-ize/-fy become German verbs ending in -ieren (pronounced 'EE-ren').",
         "With 'ich kann' (I can) + an infinitive, you can already make full sentences.",
@@ -14,7 +15,8 @@
       "steps": [
         {
           "id": "1.1",
-          "teach": "English '-ise/-ize/-ate' verbs often map to German '-ieren'. 'to organise' -> 'organisieren'. The stress lands on the 'ie': organis-IE-ren.",
+          "teach": "Here's the trick that opens the door. A huge family of English verbs ends in '-ise', '-ize' or '-ate' — words like 'organise', 'reserve', 'repair'. In German these almost all end in '-ieren', and the stress lands right on that 'ie': organis-IE-ren. So if you can say 'to organise', you can already say 'organisieren' — just swap the ending. What do you think 'to reserve' would be?",
+          "why": "This is the single richest cognate pattern between English and German, because both languages pulled these verbs from Latin/French. The rule is mechanical: take the English verb, drop '-ise/-ize/-ate', add '-ieren'. Internalising it now means every future lesson hands you free vocabulary — you're not memorising, you're converting what you already own.",
           "prompts": [
             { "en": "to organise", "de": "organisieren", "notes": "Pure cognate transfer. -ise -> -ieren." },
             { "en": "to reserve", "de": "reservieren", "notes": "reserve -> reservieren." },
@@ -23,7 +25,8 @@
         },
         {
           "id": "1.2",
-          "teach": "'ich kann' = 'I can'. Add an infinitive and you have a sentence. 'I can organise' = 'Ich kann organisieren'. The verb stays at the end.",
+          "teach": "Now let's make sentences. 'ich kann' means 'I can' — notice it's almost the English word 'can'. Put 'ich kann' in front of one of your new verbs and you have a real sentence: 'Ich kann organisieren' = 'I can organise'. The one thing to watch: the second verb, the infinitive, slides to the very END of the sentence and waits there. So how would you say 'I can repair it', using 'es' for 'it'?",
+          "why": "German has a deep habit you'll lean on for the whole course: the conjugated verb takes the second slot, and any extra verb goes to the very end. English does a faint version of this ('I can it repair' feels wrong, but 'I can do it' keeps 'can' early). Train your ear now to expect the action verb to land last — almost every structure ahead reuses this.",
           "prompts": [
             { "en": "I can organise", "de": "Ich kann organisieren", "notes": "kann is the conjugated verb; infinitive at the end." },
             { "en": "I can reserve", "de": "Ich kann reservieren", "notes": "Same structure." },
@@ -35,6 +38,7 @@
     {
       "id": 2,
       "title": "Want & must — verb to the end",
+      "intro": "You've got 'I can'. Now we'll add two more power words — 'I want' and 'I must' — and they run on exactly the same engine you just built. The only catch is a sneaky false friend hiding in plain sight.",
       "concepts": [
         "'ich will' = I want, 'ich muss' = I must / I have to.",
         "Like 'kann', these send the main verb to the very end.",
@@ -43,7 +47,8 @@
       "steps": [
         {
           "id": "2.1",
-          "teach": "'ich will' = 'I want' (NOT 'I will' — false friend!). The infinitive goes to the end.",
+          "teach": "'ich will' means 'I want' — and here's the trap: it looks exactly like English 'I will', but it does NOT mean that. 'wollen' is about wanting, desiring. So 'Ich will das' = 'I want that', not 'I will that'. Everything else works just like 'kann': the infinitive goes to the end. Try 'I want to organise it' — remember 'es' for 'it'.",
+          "why": "False friends are worth flagging hard because your English instinct will fight you here. The German 'will' and the English 'will' are cousins that drifted apart — German kept the original 'desire' meaning (compare English 'willing', 'willpower'). Anchor it to those words and the meaning sticks. Structurally, nothing new: same verb-second, infinitive-last pattern as lesson 1.",
           "prompts": [
             { "en": "I want to organise it", "de": "Ich will es organisieren", "notes": "will = want. Warn about the false friend." },
             { "en": "I want to reserve that", "de": "Ich will das reservieren", "notes": "das = that." }
@@ -51,7 +56,8 @@
         },
         {
           "id": "2.2",
-          "teach": "'ich muss' = 'I must / I have to'. Same end-position rule.",
+          "teach": "'ich muss' = 'I must' or 'I have to' — and you can almost hear 'must' inside 'muss'. Same machinery as before: 'Ich muss es reparieren' = 'I have to repair it', with the verb parked at the end. Notice 'das' means 'that' and 'es' means 'it' — small words, but you'll use them constantly. How would you say 'I have to organise that'?",
+          "why": "'muss' is a direct Germanic cousin of English 'must' — same sound, same meaning, no surprises. That's the reward of the modal system: once you learn the verb-second/infinitive-last shape with 'kann', every new modal (want, must, may, should) just slots in without rewiring the sentence.",
           "prompts": [
             { "en": "I have to repair it", "de": "Ich muss es reparieren", "notes": "muss = must/have to." },
             { "en": "I have to organise that", "de": "Ich muss das organisieren", "notes": "Consolidates muss + das." }
@@ -62,6 +68,7 @@
     {
       "id": 3,
       "title": "Saying no — 'nicht' and 'machen'",
+      "intro": "So far everything has been positive. But half of real conversation is saying what you can't, won't, or don't want to do. Today you get the master verb 'to do' and the one little word that flips any sentence into the negative.",
       "concepts": [
         "'machen' = to make / to do (very common).",
         "'nicht' = not; it sits just before the final infinitive.",
@@ -70,7 +77,8 @@
       "steps": [
         {
           "id": "3.1",
-          "teach": "'machen' = to do / to make. 'Ich kann das machen' = 'I can do that'.",
+          "teach": "'machen' is one of the most useful verbs in German: it means both 'to make' and 'to do'. (Think of English 'to make' — same Germanic root.) Drop it into the slots you already know: 'Ich kann das machen' = 'I can do that', with 'machen' sitting at the end like every infinitive so far. Now try 'I want to do it'.",
+          "why": "German doesn't split 'make' and 'do' the way English does — one verb 'machen' covers both, which actually makes life easier. It behaves like any other infinitive, so it costs you nothing structurally: it just goes to the end. This gives you a flexible, all-purpose action verb to negate in the next step.",
           "prompts": [
             { "en": "I can do that", "de": "Ich kann das machen", "notes": "machen at the end." },
             { "en": "I want to do it", "de": "Ich will es machen", "notes": "will + es + machen." }
@@ -78,7 +86,8 @@
         },
         {
           "id": "3.2",
-          "teach": "'nicht' = not, and it goes right before the final verb. 'I can't do it' = 'Ich kann es nicht machen'.",
+          "teach": "To say 'not', use 'nicht', and it goes right before that final verb. So 'Ich kann es machen' (I can do it) becomes 'Ich kann es nicht machen' (I can't do it) — 'nicht' tucks in just ahead of 'machen'. The infinitive still guards the end; 'nicht' simply steps in front of it. How would you say 'I don't want to do that'?",
+          "why": "'nicht' is the same word as English 'not' / 'naught' — recognisable once you say it aloud. Its placement follows a clean logic: the final verb is the anchor, and 'nicht' negates it from immediately in front. Because your infinitive always sits at the end, you always know exactly where 'nicht' belongs — right before it.",
           "prompts": [
             { "en": "I can't do it", "de": "Ich kann es nicht machen", "notes": "nicht before the infinitive." },
             { "en": "I don't want to do that", "de": "Ich will das nicht machen", "notes": "will ... nicht machen." }
@@ -89,6 +98,7 @@
     {
       "id": 4,
       "title": "Asking questions & 'du'",
+      "intro": "You can make statements and negate them — now let's learn to ask. German turns a statement into a question with one beautifully simple move, no extra words needed. And we'll meet 'you', so you can finally talk TO someone.",
       "concepts": [
         "Turn a statement into a question by putting the verb FIRST: 'Kann ich...?'",
         "'du' = you (informal). Its verb ending is -st: 'du kannst', 'du willst', 'du musst'.",
@@ -97,7 +107,8 @@
       "steps": [
         {
           "id": "4.1",
-          "teach": "Question = verb first. 'Ich kann...' -> 'Kann ich...?'.",
+          "teach": "To ask a yes/no question, just flip the first two words so the verb comes first. 'Ich kann es machen' (I can do it) becomes 'Kann ich es machen?' (Can I do it?). English does the very same flip — 'I can' becomes 'Can I?'. No 'do', no extra machinery. Try turning 'I can reserve that' into the question 'Can I reserve that?'.",
+          "why": "This is a gift: English already inverts verb and subject for modal questions ('Can I...?', 'Must I...?'), and German does it for ALL verbs, every time. So you're not learning a new rule — you're applying a familiar one more widely. The infinitive still waits at the end; only the front of the sentence rearranges.",
           "prompts": [
             { "en": "Can I do it?", "de": "Kann ich es machen?", "notes": "Inversion: verb first." },
             { "en": "Can I reserve that?", "de": "Kann ich das reservieren?", "notes": "Same pattern." }
@@ -105,7 +116,8 @@
         },
         {
           "id": "4.2",
-          "teach": "'du' = you (informal). The verb takes -st. 'du kannst', 'du willst', 'du musst'.",
+          "teach": "'du' is the informal 'you' — the one you use with friends. When the subject is 'du', the verb takes a '-st' ending: 'du kannst', 'du willst', 'du musst'. Combine that with the question flip and you get 'Kannst du es reparieren?' = 'Can you repair it?'. Notice the '-st' — it even echoes the old English 'thou canst'. How would you ask 'Do you want to do that?'?",
+          "why": "That '-st' ending is a living fossil shared with English: 'thou canst', 'thou wilt', 'thou must' all carried it centuries ago. German simply kept the system alive. So the ending isn't arbitrary — it's the same agreement marker English mostly dropped. Tie each 'du'-form to its archaic English twin and they're easy to recall.",
           "prompts": [
             { "en": "Can you repair it?", "de": "Kannst du es reparieren?", "notes": "kannst + du, inversion." },
             { "en": "Do you want to do that?", "de": "Willst du das machen?", "notes": "willst + du." }
@@ -116,6 +128,7 @@
     {
       "id": 5,
       "title": "'haben' — to have, and nouns",
+      "intro": "Up to now you've leaned on modal verbs. Today you get your first everyday 'content' verb — 'to have' — plus a quirk of German spelling that will make written German instantly recognisable: every noun wears a capital letter.",
       "concepts": [
         "'haben' = to have. ich habe, du hast.",
         "All German nouns are capitalised: 'Zeit' (time), 'Geld' (money).",
@@ -124,7 +137,8 @@
       "steps": [
         {
           "id": "5.1",
-          "teach": "'ich habe' = I have, 'du hast' = you have. German nouns are always capitalised.",
+          "teach": "'haben' means 'to have' — clearly the same word. 'ich habe' = I have, 'du hast' = you have (there's that '-st' again, and English even kept 'hast' in 'thou hast'). One more thing about German: every noun is capitalised, always. So 'time' is 'Zeit' with a capital Z: 'Ich habe Zeit' = 'I have time'. To say you DON'T have something, German uses 'keine' before the noun — 'Ich habe keine Zeit' = 'I have no time'.",
+          "why": "Capitalising nouns is a German rule with no exceptions, and it's actually a reading aid — capital letters flag the 'things' in a sentence at a glance. For negation, notice German uses 'keine' (no/not any) with a noun rather than 'nicht'; that mirrors English 'I have no time' versus 'I don't have time' — German simply prefers the 'no' version with nouns.",
           "prompts": [
             { "en": "I have time", "de": "Ich habe Zeit", "notes": "Zeit = time, capitalised." },
             { "en": "I don't have time", "de": "Ich habe keine Zeit", "notes": "Introduce 'keine' = no/not any (used with nouns instead of nicht)." }
@@ -132,7 +146,8 @@
         },
         {
           "id": "5.2",
-          "teach": "Question form again: 'Hast du...?' = 'Do you have...?'.",
+          "teach": "Now make it a question with the flip you already know: 'Hast du Zeit?' = 'Do you have time?'. Verb first, then 'du'. Add another capitalised noun, 'Geld' (money), and you can ask 'Hast du Geld?' = 'Do you have money?'. Try it yourself first.",
+          "why": "This reuses two things you already own — the question inversion from lesson 4 and the '-st' ending — applied to a brand-new verb. That's the payoff of learning patterns instead of phrases: a new verb instantly fits the structures you've built, so 'Do you have...?' costs you almost nothing.",
           "prompts": [
             { "en": "Do you have time?", "de": "Hast du Zeit?", "notes": "hast + du inversion." },
             { "en": "Do you have money?", "de": "Hast du Geld?", "notes": "Geld = money." }
@@ -143,6 +158,7 @@
     {
       "id": 6,
       "title": "Being polite — 'ich möchte'",
+      "intro": "Bluntly saying 'I want' can sound rough in any language. German has an elegant, everyday softener that turns demands into polite requests — exactly like English 'I would like'. This is the phrase that gets you served in cafes and restaurants.",
       "concepts": [
         "'ich möchte' = I would like (polite form of want).",
         "Light intro to 'ein/eine/einen' = a/an.",
@@ -151,7 +167,8 @@
       "steps": [
         {
           "id": "6.1",
-          "teach": "'ich möchte' = 'I would like' — the polite way to ask for things. Verb still to the end.",
+          "teach": "'ich möchte' = 'I would like' — the courteous cousin of 'ich will'. It runs on the same engine: the infinitive goes to the end. 'Ich möchte das machen' = 'I would like to do that'. When you order, you'll need 'a/an'; for now just take 'einen Tisch' (a table) as a whole chunk: 'Ich möchte einen Tisch reservieren' = 'I'd like to reserve a table'. We'll unpack that 'einen' properly later.",
+          "why": "'möchte' is actually the polite (Konjunktiv) form of 'mögen' (to like) — the same softening English does by turning 'want' into 'would like'. Treat it as a ready-made polite modal: it slots in wherever 'will' or 'kann' would, with the verb at the end. Don't worry about why 'einen' has that ending yet — lesson 13 reveals it; right now, fluency-by-chunk is the goal.",
           "prompts": [
             { "en": "I would like to reserve a table", "de": "Ich möchte einen Tisch reservieren", "notes": "Tisch = table; einen = a (masculine, object). Keep it light." },
             { "en": "I would like to do that", "de": "Ich möchte das machen", "notes": "möchte + das + machen." }
@@ -159,7 +176,8 @@
         },
         {
           "id": "6.2",
-          "teach": "Asking politely: 'Möchtest du...?' = 'Would you like...?'.",
+          "teach": "Make it a polite question and you can offer things to others: 'Möchtest du...?' = 'Would you like...?'. There's the '-st' ending for 'du' again, plus the question flip. 'Möchtest du es organisieren?' = 'Would you like to organise it?'. Have a go.",
+          "why": "Offering ('Would you like...?') is the social mirror of requesting ('I would like...'), and German builds it the same way you've built every question: take the 'du'-form, put the verb first. You're recombining the '-st' ending and inversion — old tools, new and very useful social function.",
           "prompts": [
             { "en": "Would you like to organise it?", "de": "Möchtest du es organisieren?", "notes": "möchtest + du." }
           ]
@@ -169,6 +187,7 @@
     {
       "id": 7,
       "title": "'sein' — to be",
+      "intro": "Every language needs 'to be', and German's is irregular — but the most useful forms are tiny and one of them is almost identical to English. With 'to be' plus a handful of cognate adjectives, you can suddenly describe how things are.",
       "concepts": [
         "'sein' = to be. ich bin, du bist, es ist.",
         "Adjectives as cognates: bereit (ready), möglich (possible).",
@@ -177,7 +196,8 @@
       "steps": [
         {
           "id": "7.1",
-          "teach": "'ich bin' = I am, 'du bist' = you are, 'es ist' = it is. 'is' -> 'ist' is an easy bridge.",
+          "teach": "'sein' is 'to be'. Its key forms: 'ich bin' (I am), 'du bist' (you are), 'es ist' (it is). 'ist' is just 'is' with an extra 't' — an easy bridge. Pair it with an adjective: 'Ich bin bereit' = 'I am ready', 'Es ist möglich' = 'It is possible'. Notice 'möglich' sounds a bit like 'possible'-ish in meaning — and many '-lich' words map to English '-ly' or '-able'.",
+          "why": "'bin', 'bist', 'ist' line up with English 'be', 'beest', 'is' — same ancient verb, same irregular family (English 'be/am/is/are' is irregular too, so this should feel familiar rather than alien). Lock the three short forms now; they recur everywhere, and in lesson 11 'sein' even becomes a helper verb for the past.",
           "prompts": [
             { "en": "I am ready", "de": "Ich bin bereit", "notes": "bereit = ready." },
             { "en": "It is possible", "de": "Es ist möglich", "notes": "möglich = possible." }
@@ -185,7 +205,8 @@
         },
         {
           "id": "7.2",
-          "teach": "Negate with 'nicht': 'It is not possible' = 'Es ist nicht möglich'.",
+          "teach": "Negate with your old friend 'nicht': since there's no final infinitive here, 'nicht' just follows the verb and its complement. 'Es ist nicht möglich' = 'It is not possible'. And to ask, flip as always: 'Bist du bereit?' = 'Are you ready?'. Try both.",
+          "why": "When there's no infinitive hanging at the end, 'nicht' attaches to what it negates — here, the adjective ('nicht möglich' = not possible), exactly like English 'not possible'. This is the same 'nicht' from lesson 3; you're just seeing where it lands when the sentence has no final verb. The question, of course, is the familiar inversion.",
           "prompts": [
             { "en": "It is not possible", "de": "Es ist nicht möglich", "notes": "nicht after ist." },
             { "en": "Are you ready?", "de": "Bist du bereit?", "notes": "bist + du inversion." }
@@ -196,6 +217,7 @@
     {
       "id": 8,
       "title": "He/she/it & 'weil' — longer sentences",
+      "intro": "Time to talk about other people, and then to join two thoughts into one. The connector 'because' does something dramatic to German word order — and once you see it, you'll understand the soul of the language: verbs love the end.",
       "concepts": [
         "er = he, sie = she, es = it. Their verb takes -t: er kann, sie hat, es ist.",
         "'weil' = because, and it sends the verb to the very end of its clause.",
@@ -204,7 +226,8 @@
       "steps": [
         {
           "id": "8.1",
-          "teach": "'er/sie/es' + verb ending -t. 'Sie kann es machen' = 'She can do it'. 'Er hat Zeit' = 'He has time'.",
+          "teach": "Now the third-person subjects: 'er' = he, 'sie' = she, 'es' = it. Their verb takes a '-t' ending — much like English adds '-s' ('he has', 'she can'). So 'Sie kann es machen' = 'She can do it', and 'Er hat Zeit' = 'He has time' (note 'hat', not 'habe'). Try saying 'She can do it' yourself.",
+          "why": "Every language marks the third person specially — English uses '-s' ('he works'), German uses '-t' ('er arbeitet'). Same idea, different letter. You've now met all the singular subjects (ich/du/er/sie/es) and their endings (-e, -st, -t), which is the whole present-tense skeleton you'll reuse for every regular verb.",
           "prompts": [
             { "en": "She can do it", "de": "Sie kann es machen", "notes": "sie + kann." },
             { "en": "He has time", "de": "Er hat Zeit", "notes": "er + hat." }
@@ -212,10 +235,465 @@
         },
         {
           "id": "8.2",
-          "teach": "'weil' = because. After 'weil', the conjugated verb jumps to the END. 'I can't come because I have to work' = 'Ich kann nicht kommen, weil ich arbeiten muss'.",
+          "teach": "Here's the big payoff. 'weil' = 'because'. The moment you say 'weil', the conjugated verb of that clause is kicked all the way to the END. So 'I can't come because I have to work' = 'Ich kann nicht kommen, weil ich arbeiten muss' — see how 'muss' lands dead last? ('kommen' = come, 'arbeiten' = work.) The first half keeps normal order; only the 'weil' part rearranges. Build 'I have time because it is possible'.",
+          "why": "This is the heart of German: subordinating connectors like 'weil' send their verb to the very end of the clause. It feels strange, but it's the logical extreme of the habit you've trained since lesson 1 (verbs gravitating rightward). English faintly hints at this with old phrasings, but German makes it law. Master 'weil' and you've cracked a pattern that 'dass', 'wenn', 'ob' (lesson 17) all reuse.",
           "prompts": [
             { "en": "I can't come because I have to work", "de": "Ich kann nicht kommen, weil ich arbeiten muss", "notes": "Big LT payoff: weil pushes 'muss' to the end. kommen = come, arbeiten = work." },
             { "en": "I have time because it is possible", "de": "Ich habe Zeit, weil es möglich ist", "notes": "weil -> ist at the end." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 9,
+      "title": "The rest of the modals — dürfen, sollen, mögen",
+      "intro": "You already own the modal machine. Now we just feed it three more verbs — 'may', 'should', and 'like' — and you instantly get a whole new range of things to say, for free, because the structure never changes.",
+      "concepts": [
+        "'darf' = am allowed to / may; 'soll' = should / am supposed to; 'mag' = like.",
+        "They behave exactly like kann/will/muss — conjugated verb in second position, infinitive to the end.",
+        "'gehen' = to go, a very high-frequency verb."
+      ],
+      "steps": [
+        {
+          "id": "9.1",
+          "teach": "'ich darf' = 'I may / I'm allowed to'. To remember the sound, lean on English 'dare' — close enough to jog the memory. Same rule as ever: infinitive to the end. Meet 'gehen' = 'to go' (think 'go' with a Germanic twist). 'Darf ich gehen?' = 'May I go?'. For 'du', it's irregular: 'du darfst'. And notice you can stack what you know: 'Er darf gehen, weil er Zeit hat' = 'He may go because he has time' — there's 'weil' pushing 'hat' to the end again.",
+          "why": "'dürfen' is about permission, the precise sense English splits between 'may' and 'be allowed to'. Mechanically it's identical to 'kann/will/muss': verb-second, infinitive-last, '-st' for du, and it still triggers verb-final order after 'weil'. So the only genuinely new thing is the word itself — everything around it is muscle memory.",
+          "prompts": [
+            { "en": "May I go?", "de": "Darf ich gehen?", "notes": "darf + inversion for a question. gehen = to go." },
+            { "en": "You're not allowed to do that", "de": "Du darfst das nicht machen", "notes": "du darfst (-st ending); nicht before the final verb, as in lesson 3." },
+            { "en": "He may go because he has time", "de": "Er darf gehen, weil er Zeit hat", "notes": "Builds on weil (lesson 8): hat jumps to the end." }
+          ]
+        },
+        {
+          "id": "9.2",
+          "teach": "'ich soll' = 'I should / I'm supposed to' — and you can hear 'shall/should' inside 'soll'. Same machinery you already own. This is also a great moment for your first question word: 'was' = 'what'. 'Was soll ich machen?' = 'What should I do?' — the question word comes first, then the usual verb-flip. Try 'You should reserve a table' (du sollst).",
+          "why": "'sollen' is the Germanic sibling of 'shall'/'should', carrying obligation or expectation. The fresh idea here is the question word: 'was' (what) sits at the front, and then everything inverts behind it just like a yes/no question. That 'question-word + inversion' template is reusable — 'wann', 'wie', 'wo' will all behave the same way.",
+          "prompts": [
+            { "en": "I should do it", "de": "Ich soll es machen", "notes": "soll + es + machen." },
+            { "en": "What should I do?", "de": "Was soll ich machen?", "notes": "'was' = what; then verb-first inversion. Your first question word." },
+            { "en": "You should reserve a table", "de": "Du sollst einen Tisch reservieren", "notes": "du sollst; einen Tisch from lesson 6." }
+          ]
+        },
+        {
+          "id": "9.3",
+          "teach": "'ich mag' = 'I like' (its polite cousin 'möchte' you already met in lesson 6). Use 'mag' with a noun: 'Ich mag die Stadt' = 'I like the city' — and here's your first 'the': 'die' for a feminine noun like 'Stadt'. For 'du' it's 'du magst': 'Magst du Kaffee?' = 'Do you like coffee?' ('Kaffee' is an easy cognate). When there's no infinitive, 'nicht' goes to the end: 'Sie mag das nicht' = 'She doesn't like that'.",
+          "why": "'mögen' relates to English 'may/might' historically, but in modern use it's 'to like'. The new wrinkle is 'die', the feminine 'the' — German has three genders, so 'the' comes in flavours; you'll map them out in lessons 13–15. For now, note that 'nicht' parks at the end when no infinitive is there to anchor it, exactly as you saw with 'sein' in lesson 7.",
+          "prompts": [
+            { "en": "I like the city", "de": "Ich mag die Stadt", "notes": "Stadt = city; 'die' = the (feminine). First 'the'." },
+            { "en": "Do you like coffee?", "de": "Magst du Kaffee?", "notes": "du magst; Kaffee = coffee, an easy cognate." },
+            { "en": "She doesn't like that", "de": "Sie mag das nicht", "notes": "nicht at the end when there's no final infinitive." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 10,
+      "title": "The past — Perfekt with 'haben' (ge-…-t)",
+      "intro": "Now we open up the past — and the everyday way Germans do it is wonderfully familiar to English ears. It's built like 'I HAVE done that': a form of 'have' plus a past participle. And your old -ieren verbs get a special, even easier treatment.",
+      "concepts": [
+        "Germans speak about the past mostly with the Perfekt: a form of 'haben' + a past participle at the END.",
+        "Regular participles: ge + stem + t. machen -> gemacht; -ieren verbs drop the ge-: organisieren -> organisiert.",
+        "This is the same end-position habit you already have — the participle just takes the final slot."
+      ],
+      "steps": [
+        {
+          "id": "10.1",
+          "teach": "The everyday past tense, the Perfekt, works like English 'I have done': a form of 'haben' in second position plus a past participle at the END. Regular verbs build the participle as ge- + stem + -t. So 'machen' becomes 'gemacht': 'Ich habe das gemacht' = 'I did that' / 'I have done that'. Your question tools still work: 'Was hast du gemacht?' = 'What did you do?'. (One verb, 'arbeiten', adds an extra 'e' for ease: 'gearbeitet'.)",
+          "why": "German leans on the present-perfect shape for talking about the past in speech, so a single German Perfekt covers both English 'I did' and 'I have done' — you don't choose, you just use it. And notice it reuses your deepest habit: the participle takes the end slot, exactly where infinitives have lived since lesson 1. So 'haben' is just another verb-second helper, and the meaty verb goes last.",
+          "prompts": [
+            { "en": "I did that", "de": "Ich habe das gemacht", "notes": "habe holds position 2; gemacht goes last. English present-perfect and simple-past both map here." },
+            { "en": "What did you do?", "de": "Was hast du gemacht?", "notes": "was + hast du + gemacht. Question word, then inversion, participle still last." },
+            { "en": "He worked", "de": "Er hat gearbeitet", "notes": "arbeiten -> gearbeitet (an extra 'e' before -t for easier pronunciation)." }
+          ]
+        },
+        {
+          "id": "10.2",
+          "teach": "Here's a lovely bonus. Your '-ieren' verbs from day one form their participle WITHOUT the 'ge-' — they just keep the '-t'. So 'reservieren' becomes 'reserviert', 'reparieren' becomes 'repariert', 'organisieren' becomes 'organisiert'. 'Ich habe einen Tisch reserviert' = 'I reserved a table'. Meet 'wir' = 'we' (the verb form 'haben' matches): 'Wir haben das organisiert'.",
+          "why": "The '-ieren' family drops 'ge-' because those verbs are stressed on the ending, not the front, and 'ge-' only attaches to front-stressed verbs — a small phonetic rule with a huge payoff: hundreds of cognate verbs become past-tense for free, just add '-t' you already have. This is the lesson-1 cognate engine paying dividends again.",
+          "prompts": [
+            { "en": "I reserved a table", "de": "Ich habe einen Tisch reserviert", "notes": "reserviert: no ge-. Big payoff — hundreds of cognate verbs work this way." },
+            { "en": "Did you repair it?", "de": "Hast du es repariert?", "notes": "repariert; inversion for the question." },
+            { "en": "We organised that", "de": "Wir haben das organisiert", "notes": "'wir' = we; wir haben (same form as the infinitive ending -en)." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 11,
+      "title": "The past, continued — strong participles & 'sein'",
+      "intro": "English has 'I have spoken', 'I have driven', 'I have seen' — verbs that don't just add '-ed'. German has the very same family of 'strong' verbs, and the resemblance is uncanny. Plus, verbs of movement use 'be' instead of 'have' as their helper.",
+      "concepts": [
+        "Many common verbs are 'strong': their participle ends in -en (often ge-…-en), like English 'spoken', 'driven'.",
+        "Verbs of movement/change use 'sein' (to be), not 'haben', as their helper.",
+        "gegangen, gefahren, gekommen, gewesen — high-frequency irregulars worth owning."
+      ],
+      "steps": [
+        {
+          "id": "11.1",
+          "teach": "Just like English 'eaten', 'seen', 'drunk', many common German verbs form 'strong' participles ending in '-en' rather than '-t'. 'sehen' (to see) -> 'gesehen' (mirror of English 'seen'), 'trinken' (to drink) -> 'getrunken' (compare 'drunk'). They still use 'haben': 'Ich habe es gesehen' = 'I have seen it'. ('Hast du den Kaffee getrunken?' — don't worry about 'den' yet; it's a preview of lesson 13.)",
+          "why": "Strong verbs are a shared Germanic inheritance: English 'sing/sang/sung', 'drink/drank/drunk' and German 'singen/sang/gesungen', 'trinken/trank/getrunken' are literally the same verbs evolving in parallel. So instead of memorising blindly, listen for the English echo in each participle — it's usually right there. The helper 'haben' and end-position are unchanged.",
+          "prompts": [
+            { "en": "I have seen it", "de": "Ich habe es gesehen", "notes": "sehen -> gesehen, mirrors English 'seen'." },
+            { "en": "Have you drunk the coffee?", "de": "Hast du den Kaffee getrunken?", "notes": "trinken -> getrunken; 'den Kaffee' previews the accusative (lesson 13) — just absorb it for now." }
+          ]
+        },
+        {
+          "id": "11.2",
+          "teach": "Here's a twist English lost but kept traces of: verbs of MOVEMENT take 'sein' (to be) as their helper, not 'haben'. 'gehen' -> 'gegangen', 'fahren' (to drive/go) -> 'gefahren', 'kommen' -> 'gekommen'. So 'Ich bin gegangen' = 'I went / I have gone' — literally 'I AM gone'. 'Wann bist du gekommen?' = 'When did you come?' ('wann' = when, your next question word).",
+          "why": "Old English did this too — 'he is come', 'the guests are arrived' survive in old texts and hymns. German simply kept the rule: when a verb describes moving or changing state, the past is built with 'sein'. Tie it to that archaic English 'is come' and it stops feeling foreign. Everything else — verb-second helper, participle last — is identical to lesson 10.",
+          "prompts": [
+            { "en": "I went", "de": "Ich bin gegangen", "notes": "bin, not habe — movement verb. gehen -> gegangen." },
+            { "en": "She drove to the city", "de": "Sie ist in die Stadt gefahren", "notes": "ist + gefahren; 'in die Stadt' = into the city." },
+            { "en": "When did you come?", "de": "Wann bist du gekommen?", "notes": "'wann' = when; bist (sein) + gekommen. Movement -> sein." }
+          ]
+        },
+        {
+          "id": "11.3",
+          "teach": "Two must-have irregulars: 'sein' itself and 'haben' itself in the past. 'sein' -> 'gewesen' (been), and tellingly it uses 'sein' as its own helper: 'Ich bin gewesen' = 'I have been'. 'haben' -> 'gehabt' (had): 'Ich habe keine Zeit gehabt' = 'I had no time' (there's 'keine Zeit' from lesson 5).",
+          "why": "'gewesen' and 'gehabt' are the high-frequency backbone of past-tense speech, so they're worth owning cold. Note English 'I was' maps to German 'I have been' (Ich bin gewesen) — German prefers the Perfekt where English uses a simple past. That mapping (English simple past -> German Perfekt) is the single most useful translation reflex to build.",
+          "prompts": [
+            { "en": "I was in the city", "de": "Ich bin in der Stadt gewesen", "notes": "bin + gewesen. (English 'I was' -> German Perfekt 'I have been'.)" },
+            { "en": "I had no time", "de": "Ich habe keine Zeit gehabt", "notes": "haben -> gehabt; keine Zeit from lesson 5." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 12,
+      "title": "Separable verbs — the prefix flies to the end",
+      "intro": "English says 'call someone UP', 'stand UP', 'wash UP' — splitting the little particle off and sending it to the end. German does exactly this, but as a formal rule with a whole class of verbs. Once you see the parallel, separable verbs become almost obvious.",
+      "concepts": [
+        "Many German verbs are built from a small prefix + a verb: anrufen (to call up), aufstehen (to stand up), einkaufen (to shop).",
+        "In a normal sentence the prefix DETACHES and goes to the very end. English does this too: 'I call you UP'.",
+        "In the Perfekt, 'ge' slots INSIDE: angerufen, aufgestanden, eingekauft."
+      ],
+      "steps": [
+        {
+          "id": "12.1",
+          "teach": "'anrufen' = 'to call up' (on the phone): it's 'an' (a particle) + 'rufen' (to call). In a normal sentence the 'an' DETACHES and flies to the very end: 'Ich rufe dich an' = 'I call you up'. You already do this in English — 'I'll call you UP', 'I'll ring you UP'. The verb 'rufe' takes its second-position slot; 'an' waits at the end. ('dich' = you as an object — more in lesson 14.) Ask 'Are you calling me?' -> 'Rufst du mich an?'.",
+          "why": "Separable verbs are the German formalisation of English phrasal verbs ('call up', 'pick up', 'turn off'). The particle carries meaning and, in a main clause, lands at the end — which is just the verb-loves-the-end habit again, now applied to a fragment of the verb. Recognising the English phrasal-verb parallel turns a feared topic into a familiar one.",
+          "prompts": [
+            { "en": "I'll call you", "de": "Ich rufe dich an", "notes": "rufe in position 2, 'an' at the end; 'dich' = you (object) — more in lesson 14." },
+            { "en": "Are you calling me?", "de": "Rufst du mich an?", "notes": "Inversion; 'mich' = me; 'an' still flies to the end." }
+          ]
+        },
+        {
+          "id": "12.2",
+          "teach": "But when a modal is in charge, the verb stays whole at the end — the prefix rejoins its stem. 'Ich muss dich anrufen' = 'I have to call you', with 'anrufen' together at the very end. Compare with 12.1: no modal -> 'an' splits off; modal present -> 'anrufen' stays intact. Try 'I want to go shopping' (einkaufen).",
+          "why": "This makes perfect sense once you remember the rule from lesson 1: after a modal, the second verb appears in its full infinitive form at the end — and a separable verb's infinitive is the whole word, prefix attached. So the prefix only detaches when the verb itself is the conjugated, second-position verb. Same logic, two outcomes depending on whether a modal is present.",
+          "prompts": [
+            { "en": "I have to call you", "de": "Ich muss dich anrufen", "notes": "With a modal, anrufen stays together at the end. Contrast with 12.1." },
+            { "en": "I want to go shopping", "de": "Ich will einkaufen", "notes": "einkaufen whole after a modal." }
+          ]
+        },
+        {
+          "id": "12.3",
+          "teach": "In the Perfekt, the 'ge' of the participle slots neatly INSIDE, between the prefix and the stem. 'anrufen' -> 'angerufen', 'aufstehen' -> 'aufgestanden', 'einkaufen' -> 'eingekauft'. 'Ich habe dich angerufen' = 'I called you'. And remember movement verbs take 'sein': 'Ich bin früh aufgestanden' = 'I got up early' ('früh' = early).",
+          "why": "The 'ge-' marks the participle and normally sits at the front — so with a separable verb it lands exactly where the split happens: after the prefix. an + ge + rufen = angerufen. It's the lesson-10 participle rule plus the lesson-12 split point, combined logically. And 'aufstehen' (to get up) is movement/change, so it pulls in 'sein' from lesson 11.",
+          "prompts": [
+            { "en": "I called you", "de": "Ich habe dich angerufen", "notes": "an-ge-rufen -> angerufen at the end." },
+            { "en": "I got up early", "de": "Ich bin früh aufgestanden", "notes": "aufstehen is movement -> sein; früh = early." },
+            { "en": "We went shopping", "de": "Wir haben eingekauft", "notes": "ein-ge-kauft -> eingekauft." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 13,
+      "title": "The accusative — der becomes den",
+      "intro": "Here's the famous German 'cases' — and the good news is they're far gentler than their reputation. For the direct object, only ONE thing visibly changes, and you've secretly been using it correctly since lesson 6 with 'einen Tisch'. Today you find out why.",
+      "concepts": [
+        "The 'object' of an action takes the accusative case. Only the MASCULINE 'the/a' visibly change: der -> den, ein -> einen.",
+        "Feminine (die/eine), neuter (das/ein) and plural (die) look the SAME in the accusative — a relief.",
+        "You've already used 'einen Tisch' since lesson 6; now you know why."
+      ],
+      "steps": [
+        {
+          "id": "13.1",
+          "teach": "When a noun is the OBJECT — the thing being acted on — German marks it with the accusative case. For masculine nouns only, 'der' becomes 'den' and 'ein' becomes 'einen'. So 'der Tisch' (the table) becomes 'den Tisch' when it's the object: 'Ich sehe den Tisch' = 'I see the table' ('sehen' = to see). 'Ich habe einen Hund' = 'I have a dog' (Hund is masculine). That's the 'einen' from lesson 6 finally explained! (Note 'sehen' shifts to 'siehst/sieht' for du/er.)",
+          "why": "Cases are how German shows who-does-what-to-whom, a job English mostly does with word order. English actually still has one relic: 'he' becomes 'him' as an object — same idea, German just extends it to 'the/a' for masculine nouns. So 'der -> den' is the noun-world version of 'he -> him'. That single change is most of what 'accusative' costs you.",
+          "prompts": [
+            { "en": "I see the table", "de": "Ich sehe den Tisch", "notes": "Tisch is masculine -> den as object." },
+            { "en": "I have a dog", "de": "Ich habe einen Hund", "notes": "Hund = dog (masc.) -> einen." },
+            { "en": "Do you see the man?", "de": "Siehst du den Mann?", "notes": "Mann -> den; note 'sehen' becomes 'siehst' (e->ie) for du/er." }
+          ]
+        },
+        {
+          "id": "13.2",
+          "teach": "And here's the relief: feminine, neuter, and plural nouns DON'T change shape at all in the accusative. 'die Stadt' (the city) stays 'die Stadt', 'das Auto' (the car) stays 'das Auto', plural 'die' stays 'die'. So 'Ich sehe die Stadt' and 'Ich habe ein Auto' need no adjustment. 'Sie hat das Auto gekauft' = 'She bought the car' (kaufen -> gekauft, the Perfekt from lesson 10).",
+          "why": "Three out of four genders are invisible in the accusative, so the whole case really boils down to one rule: watch masculine, leave the rest alone. That's why you could safely use 'die Stadt' and 'das Auto' as objects long before learning cases — they simply never changed. Knowing this lets you stop fearing the accusative and focus your attention where it's actually needed.",
+          "prompts": [
+            { "en": "I see the city", "de": "Ich sehe die Stadt", "notes": "Feminine die stays die." },
+            { "en": "I have a car", "de": "Ich habe ein Auto", "notes": "Auto is neuter -> ein, unchanged." },
+            { "en": "She bought the car", "de": "Sie hat das Auto gekauft", "notes": "Perfekt (lesson 10): kaufen -> gekauft; das Auto unchanged." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 14,
+      "title": "Accusative pronouns — mich, dich, ihn",
+      "intro": "You've met 'me' and 'you' as objects already (in 'call me', 'call you'). Now let's gather the full set of object pronouns — and discover that German says 'him' even for a table, because the table is grammatically masculine.",
+      "concepts": [
+        "Object pronouns: mich (me), dich (you), ihn (him/it-masc.), sie (her/it-fem.), es (it), uns (us).",
+        "'ihn' for a masculine thing, not just 'him' — 'den Tisch' -> 'ihn'.",
+        "These usually sit right after the conjugated verb."
+      ],
+      "steps": [
+        {
+          "id": "14.1",
+          "teach": "Object pronouns in the accusative: 'mich' = me, 'dich' = you. You've already used these with 'anrufen'. 'Er sieht mich' = 'He sees me', 'Ich sehe dich' = 'I see you'. They usually sit right after the conjugated verb. And you can recycle old verbs: 'Magst du mich?' = 'Do you like me?'. Have a go.",
+          "why": "This is exactly the English 'I -> me', 'you (subject) -> you (object)' shift, just with German forms. 'mich' even sounds like a fossilised version of 'me' (compare archaic 'meself'). Because English already changes pronouns for the object role, the concept is familiar — you're only swapping the actual words.",
+          "prompts": [
+            { "en": "He sees me", "de": "Er sieht mich", "notes": "sieht (er) + mich." },
+            { "en": "I see you", "de": "Ich sehe dich", "notes": "dich = you (object)." },
+            { "en": "Do you like me?", "de": "Magst du mich?", "notes": "Recycles 'mögen' (lesson 9) + mich." }
+          ]
+        },
+        {
+          "id": "14.2",
+          "teach": "'ihn' = 'him' — but crucially, also 'it' for any MASCULINE thing. Since 'der/den Tisch' (the table) is masculine, you refer back to it with 'ihn', not 'es'! So 'Ich habe ihn repariert' could mean 'I repaired it' when 'it' is the table. 'Ich sehe ihn' = 'I see him'. Also 'uns' = us: 'Kannst du uns anrufen?' = 'Can you call us?' (anrufen stays whole after the modal, lesson 12).",
+          "why": "This is where gender stops being decorative and becomes useful: the pronoun must match the noun's gender, so masculine things are 'ihn' (it/him), feminine things 'sie' (it/her). English lost this — we call everything 'it' — so the mental shift is to remember that in German, objects have gender and their pronouns honour it. It ties straight back to lesson 13's der/den.",
+          "prompts": [
+            { "en": "I see him", "de": "Ich sehe ihn", "notes": "ihn = him." },
+            { "en": "I repaired it", "de": "Ich habe ihn repariert", "notes": "If 'it' is a masculine noun (e.g. der Tisch), use ihn — not es." },
+            { "en": "Can you call us?", "de": "Kannst du uns anrufen?", "notes": "uns = us; anrufen whole after the modal (lesson 12)." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 15,
+      "title": "The dative — mir, dir, and 'giving' verbs",
+      "intro": "There's a second kind of object: the RECEIVER — the 'to me', 'to you', the person you give something to or help. German marks this with the dative case, and English keeps a clear echo of it in phrases like 'give ME the book'. A few everyday verbs simply insist on it.",
+      "concepts": [
+        "The dative marks the receiver ('to/for whom'). Pronouns: mir (to me), dir (to you), ihm (to him), ihr (to her), uns (to us).",
+        "Dative articles: dem (masc./neut.), der (fem.), den + -n (plural).",
+        "Some everyday verbs simply demand the dative: helfen (help), danken (thank), gefallen (please/like)."
+      ],
+      "steps": [
+        {
+          "id": "15.1",
+          "teach": "The dative is the case of the receiver — 'to me', 'to you'. The pronouns: 'mir' = (to) me, 'dir' = (to) you. 'Kannst du mir helfen?' = 'Can you help me?' — note 'helfen' (to help) takes the dative in German, so it's 'mir', not 'mich'. 'Ich helfe dir' = 'I'll help you'. With giving: 'Gib mir das Geld' = 'Give me the money' ('geben' = to give; 'gib' is the command form) — 'mir' is the receiver, 'das Geld' is the thing given.",
+          "why": "English has the dative idea built in: 'give me the book' means 'give the book TO me' — 'me' is the receiver. German just marks that receiver role explicitly with a special form. The twist is that some verbs (helfen, danken) treat their object as a receiver even when English doesn't, so 'help' takes 'mir'. Learn those verbs as 'dative verbs' and the rest follows naturally.",
+          "prompts": [
+            { "en": "Can you help me?", "de": "Kannst du mir helfen?", "notes": "helfen + dative -> mir, not mich." },
+            { "en": "I'll help you", "de": "Ich helfe dir", "notes": "helfe + dir." },
+            { "en": "Give me the money", "de": "Gib mir das Geld", "notes": "'geben' = to give; command form 'gib'; mir = receiver, das Geld = the thing given." }
+          ]
+        },
+        {
+          "id": "15.2",
+          "teach": "More dative pronouns: 'ihm' = (to) him, 'ihr' = (to) her. And here's a charming German pattern, 'gefallen': 'Es gefällt mir' literally means 'it pleases me' = 'I like it'. The THING is the subject, and YOU are in the dative. 'Die Stadt gefällt ihr' = 'She likes the city' (literally 'the city pleases her'). 'Ich helfe ihm' = 'I'll help him'.",
+          "why": "'gefallen' flips English logic: where we say 'I like X', German often says 'X pleases me' — the same construction survives in old English 'it pleases me' / 'if you please'. So the liker becomes the dative receiver of the pleasing. Recognising this 'experiencer in the dative' pattern unlocks a whole set of common verbs and stops you forcing English subject/object order onto them.",
+          "prompts": [
+            { "en": "I like it (it pleases me)", "de": "Es gefällt mir", "notes": "gefallen flips the logic: the thing is subject, you are dative." },
+            { "en": "I'll help him", "de": "Ich helfe ihm", "notes": "ihm = to him." },
+            { "en": "The city pleases her", "de": "Die Stadt gefällt ihr", "notes": "ihr = to her; subject is die Stadt." }
+          ]
+        },
+        {
+          "id": "15.3",
+          "teach": "The dative also changes 'the': 'dem' for masculine/neuter, 'der' for feminine. And the preposition 'mit' (with) ALWAYS triggers the dative. So 'Ich gehe mit dem Mann' = 'I'm going with the man', 'Ich fahre mit dem Auto' = 'I'm driving with the car' (= 'by car'), 'Sie spricht mit der Frau' = 'She is talking with the woman' ('sprechen' = to speak; er/sie 'spricht').",
+          "why": "Certain prepositions lock in a case, and 'mit' is the classic dative trigger — learn the preposition and its case as a pair ('mit + dative') and you'll never agonise over the article. Note the neat overlap: feminine dative 'der' looks like the masculine nominative 'der', but context tells them apart. 'mit dem Auto' for 'by car' is also a ready-made idiom worth banking.",
+          "prompts": [
+            { "en": "I'm going with the man", "de": "Ich gehe mit dem Mann", "notes": "mit + dative -> dem Mann (masc.)." },
+            { "en": "I'm driving with the car", "de": "Ich fahre mit dem Auto", "notes": "Auto neuter -> dem; 'mit dem Auto' = by car." },
+            { "en": "She is talking with the woman", "de": "Sie spricht mit der Frau", "notes": "Frau feminine -> der; 'sprechen' = to speak (er/sie spricht)." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 16,
+      "title": "The future & intentions — 'werden'",
+      "intro": "To talk about what WILL happen, German has 'werden' — and it slots into your modal machine perfectly. The same little verb also means 'to become', which is a neat two-for-one once you see how the meanings connect.",
+      "concepts": [
+        "'werden' = will / shall (and also 'to become'). ich werde, du wirst, er wird.",
+        "Future = werden (position 2) + infinitive at the END — your end-position habit again.",
+        "Often Germans just use the present + a time word, but 'werden' makes intention explicit."
+      ],
+      "steps": [
+        {
+          "id": "16.1",
+          "teach": "'ich werde' + an infinitive = 'I will ...'. It behaves just like a modal: the infinitive goes to the end. 'Ich werde es machen' = 'I will do it'. 'Ich werde dich morgen anrufen' = 'I will call you tomorrow' ('morgen' = tomorrow; 'anrufen' stays whole at the end). Forms: ich werde, du wirst, er wird. Ask 'Will you help me?' -> 'Wirst du mir helfen?' (with dative 'mir' from lesson 15).",
+          "why": "German builds the future the same way it builds every multi-verb sentence: a conjugated helper in second position, the main verb's infinitive at the end. So 'werden' costs you no new structure — it's the lesson-1 pattern wearing a future hat. Note German often skips it entirely, using present tense + a time word ('Ich rufe dich morgen an'), so 'werden' is for when you want to stress intention.",
+          "prompts": [
+            { "en": "I will do it", "de": "Ich werde es machen", "notes": "werde + es + machen." },
+            { "en": "I will call you tomorrow", "de": "Ich werde dich morgen anrufen", "notes": "morgen = tomorrow; anrufen whole at the end." },
+            { "en": "Will you help me?", "de": "Wirst du mir helfen?", "notes": "du wirst + inversion; mir helfen (dative, lesson 15)." }
+          ]
+        },
+        {
+          "id": "16.2",
+          "teach": "The same verb 'werden' also means 'to become / to get'. 'Es wird kalt' = 'It's getting cold' ('kalt' = cold, an obvious cognate). 'Er wird Arzt' = 'He will become a doctor' ('Arzt' = doctor) — and note German drops the article with professions, so it's just 'Arzt', not 'ein Arzt'.",
+          "why": "'will' and 'become' are connected: the future is really 'things becoming' a certain way, so one verb covering both isn't strange — English 'will' similarly began life meaning 'to want/intend'. When 'werden' stands alone with an adjective or noun ('wird kalt', 'wird Arzt'), it means 'become'; when it carries an infinitive to the end, it means 'will'. The job is decided by what follows it.",
+          "prompts": [
+            { "en": "It is getting cold", "de": "Es wird kalt", "notes": "kalt = cold; here werden = to become." },
+            { "en": "He will become a doctor", "de": "Er wird Arzt", "notes": "Arzt = doctor; professions drop the article in German." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 17,
+      "title": "Subordinate clauses — dass, wenn, ob",
+      "intro": "You already cracked verb-to-the-end with 'weil'. Now meet its siblings — 'that', 'if/when', and 'whether'. They all do the same thing, which means you can now embed thoughts inside thoughts: 'I think that...', 'I don't know whether...'.",
+      "concepts": [
+        "Like 'weil', these connectors send the conjugated verb to the END of their clause.",
+        "'dass' = that, 'wenn' = if / when, 'ob' = whether / if (for yes-no questions).",
+        "This lets you embed thoughts: 'I think that …', 'I don't know whether …'."
+      ],
+      "steps": [
+        {
+          "id": "17.1",
+          "teach": "'dass' = 'that', and just like 'weil' it sends the conjugated verb to the END of its clause. 'Ich glaube, dass es möglich ist' = 'I think that it's possible' — see 'ist' sitting at the very end? ('glauben' = to believe/think.) 'Ich weiß, dass du es machen kannst' = 'I know that you can do it' — 'kannst' lands last, after the infinitive ('wissen' = to know; irregular 'ich weiß').",
+          "why": "'dass' (that) is the same connector family as 'weil', so it triggers the identical verb-final order — you already learned this rule, you're just applying it to a new word. The English 'that' is often optional ('I think it's possible'), but German keeps 'dass' and then dutifully kicks the verb to the end. One pattern, many connectors.",
+          "prompts": [
+            { "en": "I think that it's possible", "de": "Ich glaube, dass es möglich ist", "notes": "dass -> ist at the very end, exactly like weil." },
+            { "en": "I know that you can do it", "de": "Ich weiß, dass du es machen kannst", "notes": "'wissen' = to know (ich weiß); kannst lands last after the infinitive." }
+          ]
+        },
+        {
+          "id": "17.2",
+          "teach": "'wenn' = 'if / when' for conditions — and again, verb to the end. 'Wenn ich Zeit habe, rufe ich dich an' = 'If I have time, I'll call you'. Watch the rhythm: the 'wenn' clause ends with 'habe', then the MAIN clause begins with its verb ('rufe ich ... an'), because the whole 'wenn' clause counts as the first element. 'Ich helfe dir, wenn du kommst' = 'I'll help you when you come'.",
+          "why": "Two layers of word order meet here. Inside the 'wenn' clause: verb to the end (same as weil/dass). And because that clause fills the 'first slot' of the sentence, the main clause must invert to keep its verb in second position — hence 'rufe ich' before the subject. It's verb-second logic at the whole-sentence level, perfectly consistent once you see it.",
+          "prompts": [
+            { "en": "If I have time, I'll call you", "de": "Wenn ich Zeit habe, rufe ich dich an", "notes": "wenn-clause: habe at end. Then the main clause starts with a verb: 'rufe ich … an'." },
+            { "en": "I'll help you when you come", "de": "Ich helfe dir, wenn du kommst", "notes": "wenn du kommst — verb to the end." }
+          ]
+        },
+        {
+          "id": "17.3",
+          "teach": "'ob' = 'whether / if' — but specifically the 'if' of uncertainty, the kind you could answer yes or no. 'Ich weiß nicht, ob es möglich ist' = 'I don't know whether it's possible' (verb 'ist' at the end). 'Sie fragt, ob du Zeit hast' = 'She asks whether you have time' ('fragen' = to ask; 'hast' jumps to the end).",
+          "why": "English blurs two 'ifs': the conditional 'if' (= wenn) and the 'whether' if ('I don't know IF/whether it's true' = ob). German keeps them separate. Rule of thumb: if you could swap in 'whether', use 'ob'; if it sets a condition, use 'wenn'. Both, like all these connectors, drive the verb to the end — that part never changes.",
+          "prompts": [
+            { "en": "I don't know whether it's possible", "de": "Ich weiß nicht, ob es möglich ist", "notes": "Use ob (not wenn) for 'whether'. ist at the end." },
+            { "en": "She asks whether you have time", "de": "Sie fragt, ob du Zeit hast", "notes": "'fragen' = to ask; hast jumps to the end." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 18,
+      "title": "Comparing things — bigger, the biggest",
+      "intro": "Comparing is delightfully English here: you add '-er' for 'bigger, faster, smaller', exactly as you'd expect. A few short words add an umlaut for flavour, and even the irregular 'good/better/best' matches German step for step.",
+      "concepts": [
+        "Comparative = adjective + -er, just like English: klein -> kleiner, schnell -> schneller.",
+        "Many short adjectives add an umlaut: warm -> wärmer, groß -> größer, alt -> älter.",
+        "'as … as' = 'so … wie'; 'than' = 'als'. Superlative = am …-sten: am größten."
+      ],
+      "steps": [
+        {
+          "id": "18.1",
+          "teach": "To compare, add '-er' to the adjective — exactly like English. 'schnell' (fast) -> 'schneller' (faster). For 'than', use 'als': 'Das Auto ist schneller als der Hund' = 'The car is faster than the dog'. 'Du bist kleiner als ich' = 'You are smaller than me' ('klein' -> 'kleiner'; note after 'als' German uses the subject form 'ich', literally 'than I').",
+          "why": "The '-er' comparative is a shared Germanic feature — 'fast/faster', 'schnell/schneller' work identically, so you barely have to learn anything. The one watch-point is 'als' for 'than' (don't confuse it with 'wie'), and the slightly formal habit of saying 'als ich' (than I) — which is actually what careful English grammar prescribes too.",
+          "prompts": [
+            { "en": "faster", "de": "schneller", "notes": "schnell + -er; pure parallel to English." },
+            { "en": "The car is faster than the dog", "de": "Das Auto ist schneller als der Hund", "notes": "als = than." },
+            { "en": "You are smaller than me", "de": "Du bist kleiner als ich", "notes": "klein -> kleiner; after 'als' German uses the subject form 'ich'." }
+          ]
+        },
+        {
+          "id": "18.2",
+          "teach": "Many short adjectives add an umlaut when comparing: 'warm' -> 'wärmer', 'groß' (big) -> 'größer', 'alt' (old) -> 'älter'. The cognates are obvious — 'warm/wärmer' is just 'warm/warmer' with a dotted vowel. For 'as ... as', use 'so ... wie': 'Sie ist so groß wie du' = 'She is as big as you'. 'Er ist älter als du' = 'He is older than you'.",
+          "why": "The umlaut on these comparatives is a sound shift, not a meaning change — the word is still its plain English cognate underneath ('alt' = old, 'älter' = older). Just remember a small set of common short adjectives umlaut. And keep 'so ... wie' (as ... as) distinct from 'als' (than): equality uses 'wie', inequality uses 'als'.",
+          "prompts": [
+            { "en": "warmer", "de": "wärmer", "notes": "warm -> wärmer (umlaut). The cognate is obvious." },
+            { "en": "He is older than you", "de": "Er ist älter als du", "notes": "alt -> älter." },
+            { "en": "She is as big as you", "de": "Sie ist so groß wie du", "notes": "so … wie = as … as." }
+          ]
+        },
+        {
+          "id": "18.3",
+          "teach": "For the superlative ('the -est'), use 'am' + adjective + '-sten'. 'groß' -> 'am größten' (biggest), 'schnell' -> 'am schnellsten' (fastest): 'Dieses Auto ist am schnellsten' = 'This car is the fastest' ('dieses' = this, neuter). And the best part: 'good' is irregular in BOTH languages, in lockstep — 'gut / besser / am besten' is literally 'good / better / best'.",
+          "why": "The 'am ...-sten' superlative is the one genuinely new shape, but it's regular and predictable. The gift is 'gut/besser/am besten': English 'good/better/best' is irregular, and German went irregular in the very same direction — same root swap, same idea. When two languages share an irregularity, that's a fossil of common ancestry, and a free memory hook.",
+          "prompts": [
+            { "en": "biggest", "de": "am größten", "notes": "am + größ + ten." },
+            { "en": "This car is the fastest", "de": "Dieses Auto ist am schnellsten", "notes": "'dieses' = this (neuter); am schnellsten." },
+            { "en": "better / best", "de": "besser / am besten", "notes": "gut/besser/am besten mirrors good/better/best exactly." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 19,
+      "title": "Reflexive verbs & high-frequency 'es gibt', 'man'",
+      "intro": "Three everyday workhorses today. Reflexive verbs turn the action back on yourself (English does this with '-self'). 'es gibt' is the all-purpose 'there is/are'. And 'man' lets you talk about people in general without naming anyone — you'll hear it constantly.",
+      "concepts": [
+        "Reflexive verbs turn the action back on yourself with mich/dich/sich: sich freuen (to be glad), sich erinnern (to remember).",
+        "'es gibt' = 'there is / there are' — always followed by the accusative.",
+        "'man' = 'one / you / people in general' — a hugely useful impersonal subject."
+      ],
+      "steps": [
+        {
+          "id": "19.1",
+          "teach": "Reflexive verbs send the action back onto the doer, the way English uses '-self'. 'sich freuen' = 'to be glad' (literally 'to gladden oneself'): 'Ich freue mich' = 'I'm glad'. The reflexive word matches the subject — 'mich' for ich, 'dich' for du: 'Erinnerst du dich?' = 'Do you remember?' (sich erinnern). For er/sie/es, the all-purpose reflexive is 'sich': 'Er freut sich' = 'He is glad'.",
+          "why": "English has the same machinery ('I enjoyed myself', 'he hurt himself') — German just uses it for more verbs than we do. The reflexive pronoun is mostly the accusative object you already know (mich, dich), with one new form, 'sich', covering all the third persons. So it's 90% revision plus one tidy new word.",
+          "prompts": [
+            { "en": "I'm glad", "de": "Ich freue mich", "notes": "freue + mich (reflexive 'me')." },
+            { "en": "Do you remember?", "de": "Erinnerst du dich?", "notes": "sich erinnern -> du erinnerst dich." },
+            { "en": "He is glad", "de": "Er freut sich", "notes": "For er/sie/es the reflexive is 'sich'." }
+          ]
+        },
+        {
+          "id": "19.2",
+          "teach": "'es gibt' = 'there is / there are' — literally 'it gives', a lovely German quirk. Whatever follows is the OBJECT, so it's in the accusative. 'Es gibt ein Problem' = 'There is a problem' ('Problem', an easy cognate). Make it a question by flipping: 'Gibt es einen Tisch?' = 'Is there a table?' (einen Tisch, accusative from lesson 13). 'Es gibt keine Zeit' = 'There is no time' (keine from lesson 5).",
+          "why": "Unlike English 'there is/there are', 'es gibt' never changes for singular or plural — one form covers both, which is simpler. And since 'gibt' (gives) is a normal transitive verb, what comes after is its object in the accusative — that's why it's 'einen Tisch', not 'ein Tisch'. Treat 'es gibt' as a fixed launcher followed by an accusative noun.",
+          "prompts": [
+            { "en": "There is a problem", "de": "Es gibt ein Problem", "notes": "Problem = problem (neuter), easy cognate." },
+            { "en": "Is there a table?", "de": "Gibt es einen Tisch?", "notes": "Inversion -> 'Gibt es …?'; einen Tisch (accusative, lesson 13)." },
+            { "en": "There is no time", "de": "Es gibt keine Zeit", "notes": "keine before a noun (lesson 5)." }
+          ]
+        },
+        {
+          "id": "19.3",
+          "teach": "'man' = 'one / you / people in general' — the impersonal subject. (Don't confuse it with 'Mann' = man; 'man' is lowercase, unstressed.) It takes the er/sie/es verb form: 'Man kann das machen' = 'You/one can do that'. 'Wie sagt man das?' = 'How do you say that?' ('wie' = how, 'sagen' = to say) — a phrase you'll use constantly in lessons.",
+          "why": "English used to have this exact word — 'one does not simply...' — but we now mostly default to a vague 'you' or 'people'. German keeps 'man' alive and uses it heavily, and it always behaves like a third-person singular subject. 'Wie sagt man ...?' is your go-to tool for asking how to express anything in German, so it's worth owning today.",
+          "prompts": [
+            { "en": "One can do that", "de": "Man kann das machen", "notes": "man + kann (3rd-person form)." },
+            { "en": "How do you say that?", "de": "Wie sagt man das?", "notes": "'wie' = how; 'sagen' = to say; sagt man = does one say." }
+          ]
+        }
+      ]
+    },
+    {
+      "id": 20,
+      "title": "Being polite & hypothetical — würde, hätte, wäre (B1)",
+      "intro": "The final step into B1: the 'would / could' world. This is how you make requests genuinely polite and talk about things that aren't real — 'if I had time...', 'that would be great'. It's the same conditional mood English builds with 'would', and German has elegant little forms for it.",
+      "concepts": [
+        "Konjunktiv II expresses 'would / could / if': polite and hypothetical.",
+        "'würde' + infinitive = 'would …'; 'könnte' = could; 'hätte' = would have; 'wäre' = would be.",
+        "These soften requests and let you talk about unreal situations — a true B1 milestone."
+      ],
+      "steps": [
+        {
+          "id": "20.1",
+          "teach": "'ich würde' + infinitive = 'I would ...'. It works just like a modal: infinitive to the end. 'Ich würde das machen' = 'I would do that'. This is also the polite way to ask: 'Würdest du mir helfen?' = 'Would you help me?' — softer than the direct 'Hilfst du mir?'. And a natural everyday phrase: 'Ich würde gerne gehen' = 'I would like to go' ('gerne' = gladly).",
+          "why": "'würde + infinitive' is the German equivalent of English 'would + verb' — same conditional idea, same structure, with the infinitive taking its familiar end slot. It's the cleanest way into the conditional because you don't conjugate the main verb at all; 'würde' does all the work. Using it to soften requests mirrors exactly how English 'would you...' is politer than 'will you...'.",
+          "prompts": [
+            { "en": "I would do that", "de": "Ich würde das machen", "notes": "würde + das + machen." },
+            { "en": "Would you help me?", "de": "Würdest du mir helfen?", "notes": "More polite than 'Hilfst du mir?'; du würdest + mir helfen." },
+            { "en": "I would like to go", "de": "Ich würde gerne gehen", "notes": "'gerne' = gladly; a natural way to say 'would like to'." }
+          ]
+        },
+        {
+          "id": "20.2",
+          "teach": "A few key verbs have their own neat 'would' forms, marked by an umlaut: 'könnte' = could (from kann), 'hätte' = would have (from hatte/haben), 'wäre' = would be (from war/sein). 'Könntest du mir helfen?' = 'Could you help me?' — very common and polite. 'Das wäre toll' = 'That would be great' ('toll' = great). 'Ich hätte Zeit' = 'I would have time'.",
+          "why": "For the most frequent verbs, German prefers these compact single-word conditionals over 'würde + infinitive' — and notice they're just the past form with an umlaut added (hatte -> hätte, war -> wäre, konnte -> könnte). That umlaut is the visible badge of the Konjunktiv. Learn this handful (könnte, hätte, wäre) and you cover the vast majority of polite, hypothetical speech.",
+          "prompts": [
+            { "en": "Could you help me?", "de": "Könntest du mir helfen?", "notes": "könnte = polite/hypothetical 'could'; very common in requests." },
+            { "en": "That would be great", "de": "Das wäre toll", "notes": "wäre = would be; toll = great." },
+            { "en": "I would have time", "de": "Ich hätte Zeit", "notes": "hätte = would have (from haben)." }
+          ]
+        },
+        {
+          "id": "20.3",
+          "teach": "Now combine them into full 'if ... then ...' sentences. 'Wenn ich Zeit hätte, würde ich dich anrufen' = 'If I had time, I would call you'. The 'wenn' clause sends 'hätte' to the end (lesson 17), then the main clause inverts: 'würde ich ... anrufen'. 'Wenn es möglich wäre, würde ich es machen' = 'If it were possible, I would do it'. This is a complete B1 sentence — congratulations, you've arrived.",
+          "why": "This is the grand synthesis: the conditional forms from this lesson plus the verb-final 'wenn' clause and verb-second main clause from lesson 17, working together. English builds the identical structure — 'If I had..., I would...' — with the same backshift into the conditional, so the logic transfers directly. Reaching this fluently means every major pattern of the course is now in your hands.",
+          "prompts": [
+            { "en": "If I had time, I would call you", "de": "Wenn ich Zeit hätte, würde ich dich anrufen", "notes": "wenn-clause with hätte at the end (lesson 17); main clause 'würde ich … anrufen'. A full B1 sentence — congratulations." },
+            { "en": "If it were possible, I would do it", "de": "Wenn es möglich wäre, würde ich es machen", "notes": "wäre at the end of the wenn-clause; würde-clause follows." }
           ]
         }
       ]

@@ -105,6 +105,7 @@ window.AudioIO = (function () {
   // utterances can never overlap.
   async function speak(text, settings, mode) {
     stop(); // silence whatever is playing before we even fetch
+    const myToken = playToken; // remember where we are AFTER stopping
     const res = await window.api.tts({
       text,
       voice: settings.voice,
@@ -113,6 +114,10 @@ window.AudioIO = (function () {
     });
     if (res.error) throw new Error(res.error);
     lastSpokenAudio = res.audio;
+    // If a stop() happened while the TTS was being fetched (e.g. the user left
+    // the screen), playToken has moved on — abort instead of playing into the
+    // next screen.
+    if (myToken !== playToken) return;
     await playArrayBuffer(res.audio);
   }
 

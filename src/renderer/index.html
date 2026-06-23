@@ -97,17 +97,35 @@
         <button class="back-btn" data-go="home">← Back</button>
         <h2 id="lesson-title">Guided Lesson</h2>
         <select id="lesson-picker" class="inline-select"></select>
+        <button id="lesson-new" class="ghost-btn" aria-label="Create your own lesson">➕ New</button>
+      </div>
+      <div id="lesson-create" class="create-panel hidden">
+        <label for="lc-topic">Create your own lesson</label>
+        <div class="row">
+          <input type="text" id="lc-topic" class="text-input" placeholder="e.g. the dative case, telling the time, ordering at a bakery..." aria-label="Lesson topic" />
+          <select id="lc-level" class="inline-select" aria-label="Lesson level">
+            <option value="A1">A1</option>
+            <option value="A2">A2</option>
+            <option value="B1">B1</option>
+            <option value="B2">B2</option>
+          </select>
+          <button id="lc-generate" class="primary-btn">Generate</button>
+          <button id="lc-cancel" class="ghost-btn">Cancel</button>
+        </div>
+        <p id="lc-status" class="status" role="status" aria-live="polite"></p>
       </div>
       <div class="conversation" id="lesson-log"></div>
       <div class="controls">
-        <button id="lesson-show-text" class="ghost-btn">👁 Show text</button>
-        <button id="lesson-replay" class="ghost-btn">🔊 Replay</button>
+        <button id="lesson-show-text" class="ghost-btn" aria-label="Show or hide the bot's text">👁 Show text</button>
+        <button id="lesson-replay" class="ghost-btn" aria-label="Replay the last spoken audio">🔊 Replay</button>
+        <button id="lesson-stop-audio" class="ghost-btn" aria-label="Stop audio playback">⏹ Stop audio</button>
         <div class="spacer"></div>
-        <input type="text" id="lesson-text-input" class="text-input hidden" placeholder="Type your German answer..." />
-        <button id="lesson-mic" class="mic-btn">🎤 Hold to speak</button>
-        <button id="lesson-toggle-input" class="ghost-btn">⌨ Type instead</button>
+        <button id="lesson-continue" class="primary-btn hidden" aria-label="Continue to the next part of the explanation">Continue ▶</button>
+        <input type="text" id="lesson-text-input" class="text-input hidden" placeholder="Type your German answer..." aria-label="Type your German answer" />
+        <button id="lesson-mic" class="mic-btn" aria-label="Hold to speak, or hold the Spacebar" aria-pressed="false">🎤 Hold to speak</button>
+        <button id="lesson-toggle-input" class="ghost-btn" aria-label="Switch between voice and typing">⌨ Type instead</button>
       </div>
-      <p id="lesson-status" class="status"></p>
+      <p id="lesson-status" class="status" role="status" aria-live="polite"></p>
     </section>
 
     <!-- FREE TALK -->
@@ -138,15 +156,16 @@
       <div id="freetalk-session" class="hidden">
         <div class="conversation" id="ft-log"></div>
         <div class="controls">
-          <button id="ft-show-text" class="ghost-btn">👁 Show text</button>
-          <button id="ft-replay" class="ghost-btn">🔊 Replay</button>
+          <button id="ft-show-text" class="ghost-btn" aria-label="Show or hide the bot's text">👁 Show text</button>
+          <button id="ft-replay" class="ghost-btn" aria-label="Replay the last spoken audio">🔊 Replay</button>
+          <button id="ft-stop-audio" class="ghost-btn" aria-label="Stop audio playback">⏹ Stop audio</button>
           <div class="spacer"></div>
-          <input type="text" id="ft-text-input" class="text-input hidden" placeholder="Type in German..." />
-          <button id="ft-mic" class="mic-btn">🎤 Hold to speak</button>
-          <button id="ft-toggle-input" class="ghost-btn">⌨ Type instead</button>
+          <input type="text" id="ft-text-input" class="text-input hidden" placeholder="Type in German..." aria-label="Type in German" />
+          <button id="ft-mic" class="mic-btn" aria-label="Hold to speak, or hold the Spacebar" aria-pressed="false">🎤 Hold to speak</button>
+          <button id="ft-toggle-input" class="ghost-btn" aria-label="Switch between voice and typing">⌨ Type instead</button>
           <button id="ft-end" class="secondary-btn">End &amp; get feedback</button>
         </div>
-        <p id="ft-status" class="status"></p>
+        <p id="ft-status" class="status" role="status" aria-live="polite"></p>
       </div>
     </section>
 
@@ -160,14 +179,15 @@
       <div id="review-card" class="hidden">
         <div class="conversation" id="review-log"></div>
         <div class="controls">
-          <button id="review-show-text" class="ghost-btn">👁 Show text</button>
-          <button id="review-replay" class="ghost-btn">🔊 Replay</button>
+          <button id="review-show-text" class="ghost-btn" aria-label="Show or hide the bot's text">👁 Show text</button>
+          <button id="review-replay" class="ghost-btn" aria-label="Replay the last spoken audio">🔊 Replay</button>
+          <button id="review-stop-audio" class="ghost-btn" aria-label="Stop audio playback">⏹ Stop audio</button>
           <div class="spacer"></div>
-          <input type="text" id="review-text-input" class="text-input hidden" placeholder="Say it in German..." />
-          <button id="review-mic" class="mic-btn">🎤 Hold to speak</button>
-          <button id="review-toggle-input" class="ghost-btn">⌨ Type instead</button>
+          <input type="text" id="review-text-input" class="text-input hidden" placeholder="Say it in German..." aria-label="Say it in German" />
+          <button id="review-mic" class="mic-btn" aria-label="Hold to speak, or hold the Spacebar" aria-pressed="false">🎤 Hold to speak</button>
+          <button id="review-toggle-input" class="ghost-btn" aria-label="Switch between voice and typing">⌨ Type instead</button>
         </div>
-        <p id="review-status" class="status"></p>
+        <p id="review-status" class="status" role="status" aria-live="polite"></p>
       </div>
     </section>
   </div>

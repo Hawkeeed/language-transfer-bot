@@ -88,7 +88,7 @@ function setSettings(patch) {
 }
 
 // ---------- Generic data (progress / srs / weaknesses) ----------
-const ALLOWED = new Set(['progress', 'srs', 'weaknesses']);
+const ALLOWED = new Set(['progress', 'srs', 'weaknesses', 'customLessons']);
 
 function loadData(name) {
   if (!ALLOWED.has(name)) throw new Error('Unknown data store: ' + name);

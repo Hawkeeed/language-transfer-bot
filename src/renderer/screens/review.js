@@ -21,6 +21,7 @@ window.ReviewScreen = (function () {
       micBtn: UI.el('review-mic'),
       textInput: UI.el('review-text-input'),
       toggleBtn: UI.el('review-toggle-input'),
+      stopAudioBtn: UI.el('review-stop-audio'),
       status: statusEl,
       onText: handleUser
     };
@@ -35,6 +36,8 @@ window.ReviewScreen = (function () {
     awaiting = false;
     processing = false;
     current = null;
+    UI.setActiveInput(null);   // cleared until we know there are cards to review
+    UI.setBusy(inputCfg, false);
 
     let cards;
     try {
@@ -56,6 +59,7 @@ window.ReviewScreen = (function () {
     if (!hasCards) return;
 
     UI.applyInputMode(inputCfg, UI.settings.inputMode);
+    UI.setActiveInput(inputCfg);   // hand Space-to-talk to this screen
     UI.addBubble(log, 'system', `${queue.length} card(s) to review.`);
     await presentCard(my);
   }
@@ -64,12 +68,14 @@ window.ReviewScreen = (function () {
     if (my !== sessionId) return;
     current = queue[idx];
     awaiting = false;
+    UI.setBusy(inputCfg, true);                // disable input while the bot speaks
     const prompt = `Say this in German: "${current.en}"`;
     UI.addBubble(log, 'bot', prompt);
     UI.setStatus(statusEl, 'Speaking…');
     try { await AudioIO.speak(prompt, UI.settings, 'teacher'); } catch (e) { /* best-effort */ }
     if (my !== sessionId) return;              // left the screen during playback
     UI.setStatus(statusEl, 'Your turn — say it in German.');
+    UI.setBusy(inputCfg, false);               // now accept the learner's answer
     awaiting = true;
   }
 
@@ -85,6 +91,7 @@ window.ReviewScreen = (function () {
   async function grade(text) {
     const my = sessionId;
     processing = true;
+    UI.setBusy(inputCfg, true);
     UI.setStatus(statusEl, 'Checking…');
     const card = current;                      // pin the card this turn is grading
 
@@ -94,6 +101,7 @@ window.ReviewScreen = (function () {
       if (my !== sessionId) return;            // navigated away mid-request — abort silently
       UI.setStatus(statusEl, e.message, 'err');
       processing = false;
+      UI.setBusy(inputCfg, false);
       awaiting = true;                         // let them retry this card
       return;
     }
@@ -118,10 +126,14 @@ window.ReviewScreen = (function () {
     if (my !== sessionId) return;              // left the screen during playback
     UI.setStatus(statusEl, '');
     processing = false;
+    UI.setBusy(inputCfg, false);
 
     idx++;
     if (idx < queue.length) await presentCard(my);
-    else UI.addBubble(log, 'system', '🎉 Review complete! See you next time.');
+    else {
+      UI.addBubble(log, 'system', '🎉 Review complete! See you next time.');
+      UI.setActiveInput(null);                 // deck done — release Space-to-talk
+    }
   }
 
   return { init, enter };
