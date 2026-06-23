@@ -46,9 +46,16 @@ On first launch:
 > Tip: hold the **🎤 Hold to speak** button while you talk, release to send. Prefer typing? Click **⌨ Type instead**.
 
 ### Build a Windows installer (optional)
+`electron-builder` is not installed by default (it adds ~165 MB to `node_modules`),
+so install it first, then build:
 ```bash
+npm install --save-dev electron-builder@24.13.3   # 24.x is required on Node 20
 npm run dist
 ```
+The installer is written to `dist/` (git-ignored). On Node 20, pin to `24.13.3` —
+newer 26.x needs Node 22+. If extraction fails on the macOS code-signing files,
+enable Windows **Developer Mode** (or run the terminal as Administrator) so it can
+create symlinks.
 
 ## 💸 Cost
 You pay OpenAI directly for your own usage. With the pipeline architecture, thinking pauses are free, so a typical 20-minute session costs roughly **$0.15–$0.25**.
